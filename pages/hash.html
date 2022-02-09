@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="fab fa-linux">HackSheet Bl3Ak</title>
+    <link rel="stylesheet" href="/css/prism.css">
+    <link rel="icon" href="/images/logo.ico">
+    <link href="/css/estilos.css" rel="stylesheet">
+    <link href="/css/button.css" rel="stylesheet">
+    <link href="/css/linux.css" rel="stylesheet">
+    <script type="module" src="/cmp/mi-footer.js"></script>
+    <script src="https://kit.fontawesome.com/f67adc3b08.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <img src="/images/logo.gif" class="imglogo" alt="logotipo">
+        <a href="/index.html" class="logo">HackSheet</a>
+        <div class="menu-toggle "></div>
+        <nav>
+            <ul>
+                <li><a href="/index.html" class="linea-center">Home</a> </li>
+
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+        </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-toggle').click(function () {
+                $('.menu-toggle').toggleClass('active')
+                $('nav').toggleClass('active')
+            })
+        })
+    </script>
+
+
+    <div class="main">
+        <img class="linux" src="/images/hash.png" alt="logo Linux">
+        <h1> Linea de comandos Hash y Binarios</h1>
+        <ul>
+
+            <span class="pasos">Sitios web de consulta</span>
+            <li><a class="enlace" href="https://crackstation.net/" target="_blank"><span class="comando1"></span>
+                    crackstation</span></a>: sitio web para descifrar hashes.</li>
+            <li> <a class="enlace" href="https://gchq.github.io/CyberChef/" target="_blank"><span>CyberChef</span></a>:
+                desencriptacion.</li>
+
+            <br>
+            <li><span class="comando2">Comprobacion de descarga por medio de autentificacion hash, mediante
+                    Windows.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                            >Get-FileHash &lbrack;path&rbrack; -Algorithm &lbrack;type-hash&rbrack;</code></pre>
+
+                <ol>
+                    <li><span class="comando2">SHA1</span></li>
+                    <li><span class="comando2">SHA256</span></li>
+                    <li><span class="comando2">SHA384</span></li>
+                    <li><span class="comando2">SHA512</span></li>
+                    <li><span class="comando2">MD5F</span></li>
+                </ol>
+            </li>
+            <br>
+            <br>
+            <span class="pasos">Identificador</span>
+
+            <li><span class="comando2">Identifica el tipo de hash que es, por medio de bash.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >hash-identifier &lbrack;hash&rbrack;</code></pre>
+                </ol>
+            </li>
+
+            <li><span class="comando2">Identifica el tipo de hash que es, por medio de python.</span>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 hash-id.py &lbrack;hash&rbrack;</code></pre>
+                </ol>
+            </li>
+
+
+            <br>
+            <br>
+            <span class="pasos">John The Riper</span>
+
+            <li><span class="comando1">John</span>
+                <ol>
+                    <li><span class="comando2">instalacion de john the riper.</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >sudo apt install john</code></pre>
+                    <li><span class="comando2">diccionario de palabras.</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >cd /usr/share/wordlists</code></pre>
+                </ol>
+            </li>
+
+
+
+            <li><span class="comando1">Encontrar el formato del hashes</span>
+                <ol>
+
+                    <pre><code class="language-bash line-numbers" data-start="1"
+                        >john --list=formats | grep -iF "&lbrack;format&rbrack;"</code></pre>
+                    <pre><code class="language-bash line-numbers" data-start="1"
+                        >john --list=formats | grep -iF "MD5"</code></pre>
+
+                </ol>
+
+            </li>
+
+            <li><span class="comando1">Cracking Hashes</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >john --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
+
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >john --format=raw-&lbrack;format&rbrack; --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
+                </ol>
+            </li>
+            <br>
+            <li><span class="comando1">Cracking Windows Authentication Hashes </span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >john --format=NT --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
+                </ol>
+            </li>
+
+            <br>
+            <li><span class="comando1">Cracking /etc/shadow Hashes</span>
+                <ol>
+                    <li><span class="comando3">unshadow</span>: comando
+                    </li>
+                    <li><span class="comando3">[path to passwd]</span>: el archivo contiene la copia del archivo
+                        /etc/passwd que has tomado de la maquina objetivo.
+                    </li>
+                    <li><span class="comando3">[path to shadow]</span>: el archivo contiene la copia del archivo
+                        /etc/shadow que tu hash tomado de la maquina objetivo.</li>
+
+
+                    <li><span class="comando3">File 1 local_passwd contiene</span>: root:x:0:0::/root:/bin/bash</li>
+
+                    <li><span class="comando3">File 2 local_shadow contiene</span>:
+                        root:$6$2nwjN454g.dv4HN/$m9Z/ r2xVfweYVkrr.v5Ft8Ws3/
+                        YYksfNwq96UL1FX0OJjY1L6l.DS3KEVsZ9rOVLB/ ldTeEL/OIhJZ4GMFMGA0:
+                        18576::::::
+                    </li>
+            </li>
+
+            <pre><code class="language-bash line-numbers"data-start="1"
+                        >unshadow local_passwd local_shadow &gt; unshadowed.txt</code></pre>
+
+            <pre><code class="language-bash line-numbers"data-start="1"
+                            >john --format=sha512crypt --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt</code></pre>
+
+
+            </ol>
+            </li>
+
+            <br>
+            <li><span class="comando1">Cracking Passwprd Protected Zip Files</span>
+                <ol>
+                    <li><span class="comando3">convertinermos el archivo zip a uno que John the Riper lo pueda
+                            reconocer</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >zip2john &lbrack;zip file&rbrack;  > &lbrack;output file&rbrack;</code></pre>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >john --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
+                </ol>
+            </li>
+
+            <br>
+            <li><span class="comando1">Cracking Password RAR Archives </span>
+                <ol>
+                    <li><span class="comando3">convertinermos el archivo rar a uno que John the Riper lo pueda
+                            reconocer</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >rar2john &lbrack;zip file&rbrack;  > &lbrack;output file&rbrack;</code></pre>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >john --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
+                </ol>
+            </li>
+            <br>
+            <li><span class="comando1">Cracking SSH Keys </span>
+                <ol>
+                    <li><span class="comando3"> convertiremos el archivo id_rsa a uno que John the Riper lo pueda
+                            reconocer</span></li>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                            >python /usr/share/john/ssh2john.py. &lbrack;id_rsa private key&rbrack; > id_rsa_hash.txt </code></pre>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >john --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;id_rsa_hash.txt&rbrack;</code></pre>
+                </ol>
+            </li>
+
+            <br>
+            <br>
+            <span class="pasos">Hydra</span>
+            <br>
+            <li><span class="comando1">Cracking FTP </span>
+                <ol>
+                    <li><span class="comando3"> usar hydra para realizar fuerza bruta en el descubrimiento de
+                            credenciales de FTP</span></li>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                            >hydra -l &lbrack;USER&rbrack; -P &lbrack;WORDLIST&rbrack; ftp://&lbrack;TARGET&rbrack;</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando1">Cracking SSH </span>
+                <ol>
+                    <li><span class="comando3"> usar hydra para realizar fuerza bruta en el descubrimiento de
+                            credenciales de SSH</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >hydra -l &lbrack;USER&rbrack; -P &lbrack;WORDLIST&rbrack; &lbrack;TARGET&rbrack; -t 4 ssh</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando1">Cracking FORMS </span>
+                <ol>
+                    <li><span class="comando3"> usar hydra para realizar fuerza bruta en el descubrimiento de
+                            credenciales en formularios web</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                                >hydra -l &lbrack;USER&rbrack; -P &lbrack;WORDLIST&rbrack; &lbrack;TARGET&rbrack; http-post-form "/:username=^USER^&password=^PASS^:F=incorrect" -V</code></pre>
+                    <li><span class="comando2">-l</span>: nombre del usuario </li>
+                    <li><span class="comando2">-P</span>: nombre de la lista de credenciales </li>
+                    <li><span class="comando2">http-post-form</span>: indica el tipo de formato (POST) </li>
+                    <li><span class="comando2">:username</span>: el campo del formulario donde se introduce el nombre
+                        del usuario </li>
+                    <li><span class="comando2">^USER^</span>: le dices a Hydra que "USER" el nombre de usuario </li>
+                    <li><span class="comando2">^USER^</span>: le dices a Hydra que "USER" el nombre de usuario </li>
+                    <li><span class="comando2">password</span>: el nombre del campo donde se introduce el password </li>
+                    <li><span class="comando2">^PASS^</span>: le dices a Hydra que use la lista use la lista de password
+                        suministradas </li>
+                    <li><span class="comando2">F=incorrect</span>: si esta palabra aparece en la pagina es incorrecta
+                    </li>
+                    <li><span class="comando2">-V</span>: salida de informacion para cada error </li>
+                    <li><span class="comando3">Ejemplo</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >hydra -l bob -P /usr/share/wordlists/rockyou.txt 10.10.10.1 http-post-form "/login:username=^USER^&password=^PASS^:F=Your username or password are incorrect." -V</code></pre>
+                </ol>
+            </li>
+            <br>
+            <br>
+            <span class="pasos">Hashcat</span>
+            <br>
+            <li><span class="comando1">Ver la informacion de metadatos de multiples archivos.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >hashcat -m &lbrack;hash-type&rbrack; -a 3 &lbrack;FILE/HASH&rbrack; &lbrack;WORDLIST PATH&rbrack;</code></pre>
+                </ol>
+            </li>
+            <br>
+            <br>
+            <span class="pasos">Binwalk</span>
+            <br>
+            <li><span class="comando1">Analizar binarios</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >binwalk &lbrack;FILE&rbrack;</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando1">Extracion de datos del binarios</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >binwalk -e &lbrack;FILE&rbrack;</code></pre>
+                </ol>
+            </li>
+            <br>
+            <br>
+            <span class="pasos">Steghide</span>
+            <br>
+            <li><span class="comando1">Ver la informacion que contiene el archivo ya sea imagen o archivos de
+                    audio(JPEG, BMP, WAV y AU)</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >steghide info &lbrack;FILE&rbrack;</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando1">Extraer datos secretos del archivo y declara al archivo stego</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >steghide extract -sf &lbrack;FILE&rbrack;</code></pre>
+                </ol>
+            </li>
+            <br>
+            <br>
+            <span class="pasos">Exiftool</span>
+            <br>
+            <li><span class="comando1">Ver la informacion de metadatos de multiples archivos.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >exiftool -v &lbrack;FILE&rbrack;</code></pre>
+                </ol>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <script src="/javascript/prism.js"></script>
+
+    <mi-footer></mi-footer>
+</body>
+
+</html>

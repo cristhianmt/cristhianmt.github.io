@@ -1,0 +1,21 @@
+
+body {
+  background-color: #042025;
+  color: #ffffff;
+  justify-content: center;
+  align-self: center;
+  font-size: 1.2vw;
+}
+
+mi-footer {
+  display: block;
+  margin: 1rem 0;
+  font-size: small;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  body{
+    font-size: 2.6vw;
+  }
+}

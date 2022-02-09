@@ -1,0 +1,138 @@
+header {
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  background: #00252B;
+  border-radius: 4px;
+  /* box-shadow: 0 2px 5px #007E91; */
+  position: fixed;
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: minmax(100px, auto);
+  grid-auto-flow: dense;
+  grid-gap: 10px;
+  z-index: 100;
+
+}
+
+.imglogo {
+  border-radius: 150px;
+  position: relative;
+  float: left;
+  width: 85px;
+  padding: 10px 10px 10px;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 36px;
+  line-height: 250%;
+  padding: 10px 10px;
+  text-align: center;
+  box-sizing: border-box;
+  float: left;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav {
+  float: right;
+}
+
+.clearfix {
+  clear: both;
+}
+
+nav ul {
+  position: flex;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  display: block;
+  margin: 15px 0;
+  padding: 10% 80px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.linea-center::after {
+  content: '';
+  position: relative;
+  top: 1px;
+  width: 100%;
+  height: 0.175rem;
+  float: right;
+  background: #14FF18;
+
+  transform: scale(0, 1);
+  transition: transform 0.3s ease;
+}
+
+.linea-center:hover::after {
+  transform: scale(1, 2);
+}
+
+@media(max-width: 991px) {
+  header {
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0;
+  }
+}
+
+@media(max-width: 500px) {
+  .logo {
+      font-size: 35px;
+      padding: 10px 10px;
+  }
+}
+
+@media(max-width: 991px) {
+  .menu-toggle {
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin: 10px;
+      float: right;
+      cursor: pointer;
+      text-align: center;
+      font-size: 30px;
+      color: #3dcbe1;
+  }
+  .menu-toggle:before {
+      content: '\f0c9';
+      font-family: fontawesome;
+      line-height: 95px;
+  }
+  .menu-toggle.active:before {
+      content: '\f00d';
+  }
+  nav {
+      display: none;
+  }
+  nav.active {
+      display: block;
+      width: 100%;
+  }
+  nav.active ul {
+      display: block;
+      text-align: center;
+  }
+  nav.active ul li a {
+      margin: 0;
+  }
+}
+

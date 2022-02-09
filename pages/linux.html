@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="fab fa-linux">HackSheet Bl3Ak</title>
+    <link rel="icon" href="/images/logo.ico">
+    <link href="/css/estilos.css" rel="stylesheet">
+    <link href="/css/button.css" rel="stylesheet">
+    <link href="/css/linux.css" rel="stylesheet" >
+    <script type="module" src="/cmp/mi-footer.js"></script>
+    <script src="https://kit.fontawesome.com/f67adc3b08.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <img src="/images/logo.gif" class="imglogo" alt="logotipo">
+        <a href="/index.html" class="logo">HackSheet</a>
+        <div class="menu-toggle "></div>
+        <nav>
+            <ul>
+                <li><a href="/index.html" class="linea-center">Home</a> </li>
+
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+        </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-toggle').click(function () {
+                $('.menu-toggle').toggleClass('active')
+                $('nav').toggleClass('active')
+            })
+        })
+    </script>
+
+
+    <div class="main">
+        <img class="linux" src="/images/linux.png" alt="logo Linux">
+        <h1> Linea de comandos Linux</h1>
+        <ul>
+            <li><span class="comando1">File system</span>
+                <img class="image" src="/images/file_system.png" alt="linux File System">
+                <ol>
+                    <li><span class="comando2">/</span>: equivalente a C:.</li>
+                    <li><span class="comando2">/root</span>: directorio con todos los privilegios del usuario.</li>
+                    <li><span class="comando2">/etc</span>: contiene generalmente los archivos de configuracion, cuando
+                        y como inician los programas.
+                        <ol>
+                            <li><span class="comando2">/passwd</span>: almacena la información del usuario, se usa para
+                                ver todos los usuarios en un sistema.</li>
+                            <li><span class="comando2">/shadow </span>: tiene todas las contraseñas de todos los
+                                usuarios.</li>
+                        </ol>
+                    </li>
+                    <li><span class="comando2">/home</span>: directorio principal del usuario.</li>
+                    <li><span class="comando2">/mnt</span>: directorio donde se montan archivos manualmente. </li>
+                    <li><span class="comando2">/media</span>: se suelen montar CD y dispositivos extraibles como USB.
+                    </li>
+                    <li><span class="comando2">/bin</span>: directorio de aplicaciones binarias importantes(el
+                        equivalente a ejecutables en Microsoft).</li>
+                    <li><span class="comando2">/lib</span>: directorio donde se encuentran todas las librerias del
+                        sistema(programas que son similares a los DLL de Microsoft).</li>
+                    <li><span class="comando2">/proc</span>: directorio que ofrecer informacion sobre el sistema cerca
+                        de los procesos. </li>
+                    <li><span class="comando2">/sys</span>: contiene archivos del sistema.</li>
+                    <li><span class="comando2">/usr</span>: contiene todos los archivos ejecutables.</li>
+                    <li><samp class="comando2">sudo -l</samp>: imprime los comando permitidos por los usuarios actuales.</li>
+                    <li><span class="comando2">Nano /etc/sudoers </span>: dar permisos de ejecución de administrador.
+                        <br>
+                        Debajo de root poner:
+                        <br>
+                        &lt;user&gt; ALL=(ALL:ALL) ALL
+                    </li>
+
+                </ol>
+            </li>
+            <li><span class="comando1">$</span>: usuario normal.</li>
+            <li><span class="comando1">#</span>: super usuario.</li>
+            <li><span class="comando1">pwd</span>: directorio de trabajo actual.</li>
+            <li><span class="comando1">which</span>: localiza la ruta de los archivos ejecutables.</li>
+
+            <li>
+                <span class="comando1">man &lt;app/command&gt;</span>: comando incorporado, da acceso a las páginas del
+                manual para la mayoría de las herramientas.
+            </li>
+            <li><span class="comando1">su </span>: permite cambiar de usuario sin cerrar sesión y volver a iniciarla en
+                la sesión primaria.</li>
+            <li><span class="comando1">whoami</span>: visualiza que el nombre de usuario actual.</li>
+            <li>
+                <span class="comando1">ls</span>: listar todos los archivos de directorio actual
+                <ol>
+                    <li><span class="comando2">-a</span>: muestra todos los archivos/directorios incluidos los “.” ó los
+                        ocultos.</li>
+                    <li><span class="comando2">-l</span>: muestra los archivos en formato de lista. </li>
+                </ol>
+            </li>
+            <li><span class="comando1">cd</span>: cambio de directorio.</li>
+            <li><span class="comando1">cat &lt;name file&gt;</span>: concatenar archivos lo que proporciona una salida
+                del contenido de cada archivo.</li>
+            <li><span class="comando1">&gt;</span>: redireccionamiento para guardar los resultados en un archivo
+                ó sobrescribir el archivo.</li>
+            <li><span class="comando1">&gt;&gt;</span>: agrega nueva informacion al archivo creado sin
+                sobrescribir. </li>
+
+            <li><samp class="comando1">|</samp>: operador tubería donde le permite tomar la salida de un comando y
+                usarla como entrada para un segundo comando.</li>
+            <li><samp class="comando1">&&</samp>: significa "and" permite ejecutar un segundo comado.</li>
+            <li><samp class="comando1">&</samp>: es un operador de segundo plano lo que significa que ejecuta un comando
+                que tarda 10 segundos en ejecutarse, normalmente no podría ejecutar comandos durante ese período; sin
+                embargo, con & ese comando aún se ejecutará y podrá ejecutar otros comandos.</li>
+            <li><samp class="comando1">;</samp>: es similar a && sin embargo no requiere que el primer comando se
+                ejecute.</li>
+
+
+            <li><samp class="comando1">grep &lt;word&gt;</samp>: buscar palabras especificas.</li>
+            <li><samp class="comando1">chown &lt;user:user&gt; file</samp>: nos permite cambiar el usuario y el grupo de
+                cualquier archivo : solo se puede usar si esta ensima de ese otro usuario lo que significa que se
+                realiza mejor con el usuario root</li>
+
+
+            <li><span class="comando1">find</span>: permite buscar cualquier archivo en el sistema.
+                <ol>
+                    <li><span class="comando2">/</span>: enumera todos los archivos del sistema operativo.</li>
+                    <li><span class="comando2">/&lt;name directory&gt;</span>: enumera todos los archivos del directorio
+                        especifico.</li>
+                    <li><span class="comando2">-type &lt;type&gt;</span>: enumerar el tipo de archivo.</li>
+                    <ol>
+                        <li><span class="comando2">d</span>: busqueda de directorios.</li>
+                        <li><span class="comando2">f</span>: busqueda de archivos.</li>
+                    </ol>
+                    <li><span class="comando2">-name &lt;"*.txt/xml/py"&gt;</span>: se especifica el patron a buscar.
+                    </li>
+                    <ol>
+                        <li><span class="comando2">-iname</span>: no distingue entre mayúsculas y minúsculas.</li>
+                        <li><span class="comando3">ejemplo</span>: find / -type f -name "*.xml" </li>
+                        <li><span class="comando3">ejemplo</span>: find /home -type f -iname user.txt</li>
+
+                    </ol>
+                    <li><span class="comando2">-user &lt;name user&gt;</span>: enumera todos los archivos de un usuario
+                        especifico.</li>
+                    <li><span class="comando2">-group &lt;name group user &gt;</span>: enumera todos los archivos de un
+                        grupo de usuario especifico.</li>
+                    <li><span class="comando2">-size &lt;size&gt;</span>: enumera todos los archivos con un tamaño
+                        especifico.
+                        <ol>
+                            <li><span class="comando2">n</span>: coincide con el tamaño exactamente.</li>
+                            <li><span class="comando2">+n</span>: coincide con valores mayores al tamaño de n.</li>
+                            <li><span class="comando2">-n</span>: coincide con valores menores al tamaño de n.</li>
+                            <li><span class="comando2">nc</span>: para bytes.</li>
+                            <li><span class="comando2">nk</span>: para KiB.</li>
+                            <li><span class="comando2">nM</span>: para MiB.</li>
+                            <li><span class="comando2">nG</span>: para GiB.</li>
+                            <li><span class="comando3">ejemplo</span>: find /home -type f -size -2k -name "*.txt"</li>
+                        </ol>
+                    <li><span class="comando2">-perm &lt;octal(666) ó simbolica(u=r)&gt;</span>: encuentra todos los
+                        archivos con permisos especificos.</li>
+                    <ol>
+                        <li><span class="comando3">-</span>: devolvera archivos con al menos esos permisos configurados.
+                        </li>
+                        <li><span class="comando3">ejemplo</span>: find /usr/bin -type f -user root -perm -u=s <span
+                                class="comando3">--&gt;</span>
+                            encontrar todos los archivos de /usr/bin que son propiedad de root y tienen al menos los
+                            el permiso SUID</li>
+
+                        <li><span class="comando3">/</span>: devolvera archivos que los se establescan los permisos.
+                        </li>
+                        <li><span class="comando3">ejemplo</span>: find /usr/bin -type f -user root -perm /666 <span
+                                class="comando3">--&gt;</span>
+                            encontrar todos los archivos de /usr/bin que son propiedad de root y que al menos
+                            coincidirá con archivos que sean legibles y escribibles por al menos uno de los grupos
+                            (propietario, grupo u otros).</li>
+                    </ol>
+                    <li><span class="comando2">time-related</span>: enumera busquedas relacionadas con el tiempo.
+                        <ol>
+                            <li><span class="comando2">prefijos para especificar el tiempo.</span></li>
+                            <ol>
+                                <li><span class="comando2">a</span>: cuando fue el ultimo acceso.</li>
+                                <li><span class="comando2">m</span>: cuando fue la ultima modificacion.</li>
+                                <li><span class="comando2">c</span>: cuando fue el ultimo cambio.</li>
+                            </ol>
+                            <li><span class="comando2">valor numerico para especificar el tiempo.</span></li>
+                            <ol>
+                                <li><span class="comando2">+n</span>: especificar que se accedió por última vez hace mas
+                                    de
+                                    n.</li>
+                                <li><span class="comando2">-n</span>: especificar que se accedió hace menos de n.</li>
+
+                            </ol>
+                            <li><span class="comando2">-&lt;prefijo&gt;min</span>: enumera archivos que se especifiquen
+                                los
+                                minutos.</li>
+                            <li><span class="comando2">-&lt;prefijo&gt;time</span>: enumera archivos que se especifiquen
+                                los
+                                dias.</li>
+                            <li><span class="comando3">ejemplo</span>: find /usr/bin -type f -mmin -120 <span
+                                    class="comando3">--&gt;</span>
+                                encontrar todos los archivos de /usr/bin y que se hayan modificado en las ultimas dos
+                                horas.
+                            </li>
+                            <li><span class="comando3">ejemplo</span>: find /usr/bin -type f -atime +10 <span
+                                    class="comando3">--&gt;</span>
+                                encontrar todos los archivos de /usr/bin a los que no se accedió en las ultimos diez
+                                dias.
+                            </li>
+                            <li><span class="comando2">2&gt;/dev/null</span>: suprimir la salida de cualquier error
+                                posible
+                                para
+                                la
+                                salida.</li>
+                            <li><span class="comando3">ejemplo</span>: find /usr/bin -type f -name "*.txt" 2&gt;
+                                /dev/null
+                                <span class="comando3">--&gt;</span>
+                                encontrar todos los archivos de /usr/bin con terminacion .txt y ademas que solo aparezca
+                                los
+                                archivos que se
+                                puedan acceder.
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li><span class="comando1">ps</span>: muestra los procesos que se están ejecutando.
+                <ol>
+                    <li><span class="comando2">Los números 3-5 digitos que aparece en la segunda columna se le conoce
+                            como process ID(PID)</span></li>
+                    <li><span class="comando2">-ef</span>: listar todos los procesos del sistema </li>
+                </ol>
+            </li>
+            <li><span class="comando1">kill&lt;PID&gt;</span>: mata procesos.</li>
+
+            <li><span class="comando1">chmod &lt;permissions&gt; &lt;file&gt;</span>: permisos de archivo.
+                <ol>
+                    <li><span>Se dividen en tres secciones, usuario y grupo y todos los demás.
+                            Todo comienza desde el segundo guión, no desde el primero.
+                            Tenga en cuenta que todo está en orden secuencial, por lo que los primeros tres caracteres
+                            controlan los permisos del usuario,
+                            los segundos tres caracteres controlan los permisos del grupo y los tres últimos caracteres
+                            controlan los permisos de todos los demás.</span></li>
+                    <li><span class="comando2">-&lt;permissions&gt;</span>: quitar permisos</li>
+                    <li><span class="comando2">+&lt;permissions&gt;</span>: agregar permisos</li>
+
+                </ol>
+                <img class="image" src="/images/chmod_user.png" alt="comando chmod number">
+                <ol>
+                    <li><span class="comando3">ejemplo</span>: chmod u-x myfile <span class="comando3">--&gt;</span>
+                        quitar el permiso de ejecusion al usuario.
+                    </li>
+                    <li><span class="comando3">ejemplo</span>: chmod ug+w myfile <span class="comando3">--&gt;</span>
+                        agregar permisos de escritura al usuario y al grupo.
+                    </li>
+                </ol>
+                <br>
+                <img class="image" src="/images/chmod.png" alt="comando chmod number">
+                <br>
+                <ol>
+                    <li><span class="comando3">ejemplo</span>: Chmod 777 &lt;file&gt; <span
+                            class="comando3">--&gt;</span> dar permiso de ejecusion a todos los usuarios.
+
+                    </li>
+                </ol>
+                <br>
+                <img class="image" src="/images/chmod_character.png" alt="comando chmod character">
+                <br>
+            </li>
+
+            <li>
+                <span class="comando1">apt &lt;command&gt;</span>: comando en sistemas derivados de debian para
+                instalar programas en Linux.
+                <ol>
+                    <li><span class="comando2">list </span>: lista los paquetes según los nombres</li>
+                    <li><span class="comando2">search</span>: busca en las descripciones de los paquetes</li>
+                    <li><span class="comando2">show</span>: muestra detalles del paquete</li>
+                    <li><span class="comando2">install</span>: instala paquetes</li>
+                    <li><span class="comando2">remove</span>: elimina paquetes</li>
+                    <li><span class="comando2">autoremove</span>: Elimina automáticamente todos los paquetes sin
+                        utilizar</li>
+                    <li><span class="comando2">update</span>: actualiza la lista de paquetes disponibles</li>
+                    <li><span class="comando2">upgrade</span>: actualiza el sistema instalando/actualizando paquetes
+                    </li>
+                    <li><span class="comando2">full-upgrade</span>: actualiza el sistema
+                        eliminando/instalando/actualizando paquetes</li>
+                    <li><span class="comando2">edit-sources</span>: edita el fichero de información de fuentes</li>
+                    <li><span class="comando2">purge &lt;app &gt;</span> : eliminar aplicación</li>
+                    <li><span class="comando2">update --fix-missing</span>: error al actualizar los paquetes</li>
+                </ol>
+            </li>
+
+            <li>
+                <span class="comando1"> xprop WM_CLASS</span>: visualiza las propiedades de una ventan.
+            </li>
+
+            <li><span class="comando1">wget</span>: descargardor de archivos no interactivo</li>
+
+            <li><span class="comando1">xrandr -s &lt; display size &gt;</span>: tamaño de pantalla
+
+                <ol>
+                    <li><samp class="comando3">ejemplo</samp>: xrandr -s 1400x1050</li>
+                </ol>
+            </li>
+            <li>
+                <samp class="comando1">convert &lt;img&gt; &lt;png, jpg&gt;</samp>
+            </li>
+            <li>
+                <samp class="comando1">Shell</samp>
+                <ol>
+                    <li><samp class="comando2">echo $SHELL</samp> </li>
+                    <li><samp class="comando2">grep &lt;user&gt; /etc/passwd</samp> </li>
+                    <li><samp class="comando2">nano /etc/passwd</samp> </li>
+                    <li><samp class="comando2">echo $0</samp> </li>
+                    <li><samp class="comando2">getent passwd 'whoami'</samp></li>
+
+                </ol>
+            </li>
+            <li>
+                <samp class="comando1">7z l</samp>: listar que contenido se estara descomprimiendo del comprimido.
+                <ol>
+                    <li><samp class="comando2">x</samp>: extraer el archivo.</li>
+                </ol>
+            </li>     
+
+            <li><samp class="comando1">stty -a</samp>: informacion sobre la shell.
+            <ol>
+                <li><span class="comando2">rows &lt;number&gt;</span>: configurar el numero de filas.</li>
+                <li><span class="comando2">cols &lt;number&gt;</span>: configurar el numero de columnas.</li>
+            </ol>
+            
+            </li>
+
+
+        </ul>
+    </div>
+
+
+
+    <mi-footer></mi-footer>
+</body>
+
+</html>

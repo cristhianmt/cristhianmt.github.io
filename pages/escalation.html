@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="fab fa-linux">HackSheet Bl3Ak</title>
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <link rel="stylesheet" href="/css/prism.css">
+    <link rel="icon" href="/images/logo.ico">
+    <link href="/css/estilos.css" rel="stylesheet">
+    <link href="/css/button.css" rel="stylesheet">
+    <link href="/css/linux.css" rel="stylesheet">
+
+
+    <!-- primas -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+
+    <script type="module" src="/cmp/mi-footer.js"></script>
+    <script src="https://kit.fontawesome.com/f67adc3b08.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <img src="/images/logo.gif" class="imglogo" alt="logotipo">
+        <a href="/index.html" class="logo">HackSheet</a>
+        <div class="menu-toggle "></div>
+        <nav>
+            <ul>
+                <li><a href="/index.html" class="linea-center">Home</a> </li>
+
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+        </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-toggle').click(function () {
+                $('.menu-toggle').toggleClass('active')
+                $('nav').toggleClass('active')
+            })
+        })
+    </script>
+
+
+    <div class="main">
+        <img class="linux" src="/images/privilege.png" alt="logo privilege">
+        <h1> Privilege Escalation</h1>
+        <ul>
+
+            <img class="image" src="/images/Escalada.png" alt="Tipos de escalamiento">
+            <br>
+
+            <li style="width: 95%;"><span class="comando1">Escalada Horizontal</span>: Se puede hacer de un usuario
+                diferente que esta en el
+                mismo nivel de privilegios, por lo que le permite heredar cualquier archivo y acceso que tenga ese
+                usuario (archivos SUID).</li>
+            <li style="width: 95%;"><span class="comando1">Escalada Vertical</span>: aqui es donde intentamos tener
+                mayores privilegios o
+                acceso, con una cuenta que ya se ha comprometido, por lo que significa secuestrar una cuanta con
+                privilegios de administrador o privilegios root.</li>
+
+
+            <br>
+            <br>
+            <div class="pasos">Sitios web de consulta</div>
+            <br>
+            <a class="enlace" href="https://gtfobins.github.io/" target="_blank"><span class="comando1"></span>
+                GTFOBins</span></a><span>: Cuando encontramos binarios en nuestra enumeracion,
+                STFOBins es una lista seleccionada de binarios de unix que se puede aprivechar para
+                eludir las restricciones de seguridad local.</span>
+            </a>
+            <br>
+            <a class="enlace" href="https://github.com/netbiosX/Checklists/blob/master/Linux-Privilege-Escalation.md"
+                target="_blank"><span class="comando1"></span>
+                Checklists</span></a><span>: Lista de verificacion para encontrar vectores para escalada de
+                privilegios.</span>
+            </a>
+            <br>
+            <a class="enlace"
+                href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md"
+                target="_blank"><span class="comando1"></span>
+                Linux-Privilege-Escalation</span></a><span>: scripts para encontrar vectores para escalada de
+                privilegios.</span>
+            </a>
+            <br>
+            <a class="enlace" href="https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_-_linux.html"
+                target="_blank"><span class="comando1"></span>
+                Privilege Escalation</span></a><span>: enumeracion de vestores para escalada de privilegios.<span>
+                    </a>
+                    <br>
+                    <a class="enlace" href="https://payatu.com/guide-linux-privilege-escalation" target="_blank"><span
+                            class="comando1"></span>
+                        A Guide To Linux Privilege Escalation</span></a><span>: Guia para encontrar vectores para
+                    escalada de privilegios.</span>
+                </a>
+                <br>
+                <br>
+                <br>
+                <div class="pasos">Busqueda de vectores para escalada de privilegios automaticamente</div>
+                <br>
+                <img class="center" src="/images/tux.png" alt="linux icon">
+                <div class="titulo">Linux</div>
+                <li><span class="comando1">LinEnum</span>: es un script en bash que ejecuta comando comunes relaciones
+                    con la escalacion de privilegios
+                    <a class="enlace" href="https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh"
+                        target="_blank"><span class="comando1"></span>
+                        Link de descarga
+                    </a>
+                </li>
+                <li><span class="comando1">LinPeas</span>: es un script en bash que busca posibles caminos para la
+                    escalacion de privilegios.
+                    la escalacion de privilegios <a class="enlace"
+                        href="https://github.com/carlospolop/PEASS-ng/blob/master/linPEAS/linpeas.sh"
+                        target="_blank"><span class="comando1"></span>
+                        Link de descarga
+
+                    </a>
+                </li>
+                <li><span class="comando1">Linux-exploit-suggester</span>: es un script en bash que busca deficiencias
+                    de
+                    seguridad en un kernel que use linux con exploits conocidos publicamente.<a class="enlace"
+                        href="https://github.com/mzet-/linux-exploit-suggester/blob/master/linux-exploit-suggester.s"
+                        target="_blank"><span class="comando1"></span>
+                        Link de descarga
+            </span>
+            </a>
+            </li>
+            <li><span class="comando1">Linux-smart-enumeration</span>: muestra vectores con posible escalada de
+                privilegios.<a class="enlace"
+                    href="https://github.com/diego-treitos/linux-smart-enumeration/blob/master/lse.sh"
+                    target="_blank"><span target="_blank"><span class="comando1"></span>
+                        Link de descarga</span>
+                </a>
+            </li>
+            <li><span class="comando1">Linux Priv Checker</span>: busca vectores de escalada de privilegios.<a
+                    class="enlace"
+                    href="https://github.com/mzet-/linux-exploit-suggester/blob/master/linux-exploit-suggester.sh"
+                    target="_blank"><span target="_blank"><span class="comando1"></span>
+                        Link de descarga</span>
+                </a>
+            </li>
+            <br>
+            <img class="center" src="/images/windows.png" alt="windows icon">
+            <div class="titulo">Windows</div>
+            <li><span class="comando1">PowerUp</span>: busca vectores de escalada de privilegios basadas en
+                Configuraciones incorrectas.<a class="enlace"
+                    href="https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1"
+                    target="_blank"><span target="_blank"><span class="comando1"></span>
+                        Link de descarga</span>
+                </a>
+            </li>
+            <li><span class="comando1">WinPeas</span>: busca vectores de escalada de privilegios.<a class="enlace"
+                    href="https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS/winPEASexe/binaries"
+                    target="_blank"><span target="_blank"><span class="comando1"></span>
+                        Link de descarga</span>
+                </a>
+            </li>
+            <li><span class="comando1">Windows-Exploit-Suggester</span>: busca vectores de escalada de privilegios.<a
+                    class="enlace"
+                    href="https://github.com/AonCyberLabs/Windows-Exploit-Suggester/blob/master/windows-exploit-suggester.py"
+                    target="_blank"><span target="_blank"><span class="comando1"></span>
+                        Link de descarga</span>
+                </a>
+                <br>
+                <span class="comando2">Actualizar la base de datos antes de ejecutar el comando.</span>
+                <pre><code class="language-python line-numbers"data-start="1"
+                    >windows-exploit-suggester.py –update</code></pre>
+                <br>
+                <span class="comando2">Ejecutar el archivo y guardarlo en un archivo de texto plano.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                        >windows-exploit-suggester.py --database 2021-09-21-mssb.xls --systeminfo sysinfo_output.txt</code></pre>
+
+            </li>
+            <li><span class="comando1">Windows-Exploit-Suggester Next Generation (WES-NG)</span>: busca vectores de
+                escalada de privilegios.<a class="enlace" href="https://github.com/bitsadmin/wesng"
+                    target="_blank"><span target="_blank"><span class="comando1"></span>
+                        Link de descarga</span>
+                </a>
+            </li>
+            <br>
+            <br>
+            <div class="pasos">Busqueda de vectores para escalada de privilegios manualmente</div>
+            <br>
+            <br>
+            <img class="center" src="/images/tux.png" alt="linux icon">
+            <div class="titulo">Linux</div>
+
+            <li><span class="comando2">Regresa el nombre del host, pero en algunos casos, puede proporcionar informacion
+                    sobre la funcion del sistema de destino dentre de la red.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >host</code></pre>
+            </li>
+
+            <li><span class="comando2">Regresa el nombre del sistema dandonos detalles adicionales sobre el kernel
+                    utilizado por el sistema</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >uname -a</code></pre>
+            </li>
+            <li><span class="comando2">Sistema de archivos proc(procfs) nos da informacion sobre los procesos del
+                    sistema de destino (version del kernel).</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >cat /proc/version</code></pre>
+            </li>
+            <li><span class="comando2">Contine informacion sobre el SO.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >cat /etc/issue</code></pre>
+            </li>
+            <li><span class="comando2">Se mostrara los procesos de ejecucion.</span>
+
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >ps</code></pre>
+            </li>
+            <li><span class="comando2">Se mostrara todos los procesos de ejecucion.</span>
+
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >ps -A</code></pre>
+            </li>
+            <li><span class="comando2">Se mostrara el arbol de procesos.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >ps axjf</code></pre>
+            </li>
+            <li><span class="comando2">Se mostrara los procesos para todos los usuario(a).</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >ps aux</code></pre>
+            </li>
+            <li><span class="comando2">Se mostrara las variables ambientales, donde se podria encontrar binarios para la
+                    ejecucion de codigo por ejemplo python.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >env</code></pre>
+            </li>
+            <li><span class="comando2">Se mostrara los comandos con privilegios root.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >sudo -l</code></pre>
+            </li>
+            <li><span class="comando2">Se listaran todos los archivos ocultos.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >ls -al</code></pre>
+            </li>
+            <li><span class="comando2">Proporciona una descripcion general del nivel de privilegios que tiene el usuario
+                    y pertenencia a grupos.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >id</code></pre>
+            </li>
+
+            <li><span class="comando2">Se mostrara los hashes de credenciales de los usuarios.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >cat /etc/shadow</code></pre>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >ls -l /etc/shadow</code></pre>
+            </li>
+            <li><span class="comando2">Se mostrara los usuarios junto con sus credenciales.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >cat /etc/passwd</code></pre>
+
+                <ol>
+                    <li><span class="comando3">Username</span>: es cuando el usaurio inicia sesión,
+                        debería ser entre 1 y 32 caracteres de longitud.</li>
+                    <li><span class="comando3">Password</span>: una X indica que esta encriptado el
+                        password y esta almacenado en el archivo /etc/shadow.</li>
+                    <li><span class="comando3">User ID (UID)</span>: cada usuario debe tener asignado un
+                        user ID (UID).
+                        EL UID 0(CERO) es reservado para root y UIDs 1-99 son reservados para otras
+                        cuentas predeterminadas. El sistema reserva otro UID 100-999 para
+                        accounts/groups administrativos y del sistema.
+                    </li>
+                    <li><span class="comando3">Group id (GID)</span>el primer grupo ID (almacenado en
+                        /etc/group file).</li>
+                    <li><span class="comando3">User ID info</span>: campo de comentario, permite agregar
+                        información adicional sobre los usuarios, como el nombre completo del usuario,
+                        el número de teléfono, etc. Este campo se usa mediante un comando de dedo.</li>
+                    <li><span class="comando3">Home directory</span>: la ruta absoluta al directorio en
+                        el que estará el usuario cuando inicio sesión. Si este directorio no existe, el
+                        directorio de usuarios se convierte en /.</li>
+                    <li><span class="comando3">Command/Shell</span>: la ruta absoluta de un commando o
+                        shell (/bin/bash).</li>
+                </ol>
+            </li>
+            <li><span class="comando2">Si encontramos un archivo de escritura /etc/passwd, podemos escribir una
+                    nueva entrada de linea de acuero con la formula anterior y crear un nuevo usuario con
+                    privilegios.</span>
+
+
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >openssl passwd -1 -salt &lbrack;salt&rbrack; &lbrack;password&rbrack;</code></pre>
+                    <li><span class="comando3"> ejecuatamos</span></li>
+
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >openssl passwd -1 -salt &lbrack;new&rbrack; &lbrack;123&rbrack;</code></pre>
+                    <li><span class="comando3"> nos genera un hash</span></li>
+                    <li><span class="comando4"> $1$new$p7ptkEKU1HnaHpRtzNizS1</span></li>
+                    <li><span class="comando3"> ahora tenemos que poner el hash y crear un nuevo usuario
+                            root</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >new:$1$new$p7ptkEKU1HnaHpRtzNizS1:0:0:root:/root:/bin/bash</code></pre>
+
+                    <li><span class="comando3"> ahora tenemos que pegar el usuario creado en el archivo
+                            /etc/passwd</span></li>
+                    <li><span class="comando3"> ahora iniciamos secion con el usuario creado</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >su new</code></pre>
+                    <li><span class="comando3"> ponermos el password</span></li>
+                    <li><span class="comando4"> 123</span></li>
+                </ol>
+            </li>
+
+            <li><span class="comando2">Se mostrara los comando anteriores y poder darnos una idea sobre el
+                    sistema.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >history</code></pre>
+                </ol>
+
+            </li>
+
+            <li><span class="comando2">Herramienta para enumerar las “Capabilities” habilitadas .</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+            >getcap -r /dev/null</code></pre>
+                </ol>
+            </li>
+
+
+            <li><span class="comando2">Se mostrara las rutas de red existentes.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >ip route</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Se mostrara las comunicaciones despues de verificar las interfaces y las rutas de
+                    red.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >netstat</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Se mostrara todos los puertos de escucha y las conexciones establecidas.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >netstat -a</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Se mostrara todos los protocolos TCP o UDP.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >netstat -at</code></pre>
+                </ol>
+            </li>
+
+            <li><span class="comando2">Se mostrara todos los puertos de en modo "escucha", estos puertos estan abiertos
+                    y listos para ceptar conexciones entrantes.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >netstat -l</code></pre>
+                </ol>
+            </li>
+
+            <li><span class="comando2">Enumera las estadisticas de uso de la red por protocolo.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >netstat -s</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Enumera las conexiones con el nombre del servicio y la informacion de PID (se
+                    puede usar con la opcion -l).</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >netstat -tp</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Muestra las estadisticas de la interfaz.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >netstat -i</code></pre>
+                </ol>
+            </li>
+
+            <br>
+            <span class="comando1">Encontrar comandos con find</span>
+            <li><span class="comando2">Busqueda de directorios llamado config.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >find / -type d -name config 2>/dev/null</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Busqueda de archivos con los permisos 777.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >find / -type f -perm 777 2>/dev/null</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Busqueda de archivos ejecutables.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >find / -perm a=x 2>/dev/null</code></pre>
+                </ol>
+            </li>
+
+            <li><span class="comando2">Busqueda de carpeta ejecutables en todo el sistema.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >find / -perm -o x -type d 2>/dev/null</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando5">Busqueda de archivos con el bit SUID, lo que nos permite ejecutar el archivo con
+                    un nivel de privilegios superior al del usuario actual.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >find / -perm -u=s -type f 2>/dev/null</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando5">Busqueda de todos los ejecutables SUID, SGID en la maquina y si tenemos suerte
+                    podemos encontrar programas con sus versiones que se pueden explotar.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null</code></pre>
+                </ol>
+            </li>
+
+            <br>
+            <span class="comando1">Encontrar tareas que se ejecutan en cron</span>
+            <br>
+            <span>
+                Es un proceso de larga ejecucion que
+                ejecuta comando de fecha y horas especificas, en la cual podemos usar esto para programas actividades,
+                ya
+                sea como eventos unico o como tareas recurrentes. Se puede crear archivos crontab que contenga comandos
+                e
+                intrucciones para que se ejecute Cron daemon.
+            </span>
+            <li><span class="comando2">Formato:</span>
+                <ol>
+                    <li><span class="comando3">#</span>: ID </li>
+                    <li><span class="comando3">m</span>: Minuto</li>
+                    <li><span class="comando3">h</span>: Hora </li>
+                    <li><span class="comando3">dom</span>: Dia del mes</li>
+                    <li><span class="comando3">mon</span>: Mes</li>
+                    <li><span class="comando3">dow</span>: Dia de la semana</li>
+                    <li><span class="comando3">user</span>: Con que usuario se ejecutara el comando</li>
+                    <li><span class="comando3">command</span>: Que comando debe ejecutarse</li>
+                    <li><span class="comando2">Ejemplo</span>:
+
+                        <ol>
+                            <li><span class="comando3"># m h dom mon dow user command</span></li>
+                            <li><span class="comando4">17 * 1 * * * root cd / && run-parts --report
+                                    /etc/cron.hourly</span></li>
+                        </ol>
+                    </li>
+
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >cat /etc/crontab</code></pre>
+                </ol>
+            </li>
+
+            <br>
+            <span class="comando1">Encontrar vectores de escalada de privilegios en PATH</span>
+            <br>
+            <span>
+                es una variable de entorno en sistemas operativos liinux y unix que especifica directorios que contiene
+                programas ejecutables como (ls, whoami, rm, mkdir, etc), lo que podemos hacer es escribir las variables
+                PATH en la ubicacion que elijamos.
+            </span>
+            <li><span class="comando2">Busqueda de carpetas sobre escribibles que podemos modificar el PATH.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+            >echo $PATH</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Busqueda de carpetas sobre escribibles que podemos modificar el PATH.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+            >find / -writable 2>/dev/null</code></pre>
+                </ol>
+            </li>
+            <br>
+            <span class="comando1">Encontrar vectores de escalada de privilegios en NTF</span>
+            <span>
+                Los archivos creados via NFS heredan la ID del usuario remoto. Si el usuario es root y el aplastamiento
+                de
+                root esta habilitado, la ID se establecera en su lugar en el usuario “nobody”, esto es comun cuando las
+                parpetas compartidas y
+                las interfaces de administracion remota como ssh y telner tambien pueden ayudarnos
+                a obtener acceso como root.
+            </span>
+
+            <li><span class="comando2">Verificacion de NTF.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+            >cat /etc/exports</code></pre>
+                    <li>Verificar si esta la opcion no_root_squash, donde si encontramos que esta presente
+                        en un recurso compartido de escritura, podemoscrear un ejecutable con el bit SUID configurado
+                        y ejecutarlo en el sistema de destino.</li>
+                </ol>
+            </li>
+            <br>
+            <br>
+            <img class="center" src="/images/windows.png" alt="windows icon">
+            <div class="titulo">Windows</div>
+            <br>
+            <span class="comando1">Enumeracion de usuarios</span>
+            <li><span class="comando2">Privilegios del usuario actual.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >whoami /priv</code></pre>
+            </li>
+            <li><span class="comando2">Lista de usuario.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >net users</code></pre>
+            </li>
+            <li><span class="comando2">Lista detallada del usuario.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >net user &lbrack;username&rbrack;</code></pre>
+            </li>
+            <li><span class="comando2">Otros usuario iniciarion sesion.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >qwinsta</code></pre>
+            </li>
+            <li><span class="comando2">Grupos de usuarios definidos en el sistema.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >net localgroup</code></pre>
+            </li>
+            <li><span class="comando2">Enumerar los miembos de un grupo especifico.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >net localgroup &lbrack;groupname&rbrack;</code></pre>
+            </li>
+
+            <br>
+            <span class="comando1">Recopilacion de informacion del sistema</span>
+            <li><span class="comando2">Devolvera una descripcion general del sistema de destino.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >systeminfo</code></pre>
+            </li>
+            <li><span class="comando2">En algunos objetivos la cantidad de informacion puede ser abrumadora y por eso es
+                    recomendable usar grep.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >systeminfo | findstr /B /C:"OS Name" /C:"OS Version"</code></pre>
+            </li>
+            <li><span class="comando2">Nombre del sistema.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >hostname</code></pre>
+            </li>
+            <br>
+            <span class="comando1">Busqueda de archivos</span>
+            <li><span class="comando2">Encontrar archivos o carpetas.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >findstr /si &lbrack;name&rbrack; &ast;.&lbrack;extension&rbrack;</code></pre>
+                <ol>
+                    <li><span class="comando3">/si</span>: busca en el directorio actual y todos los subdirectorios y
+                        omite los caracteres al buscar la cadena.</li>
+                    <li><span class="comando3">&lbrack;name&rbrack;</span>: nombre del archivo que se quiera buscar.
+                    </li>
+                    <li><span class="comando3">*.&lbrack;extension&rbrack;</span>: nombre de la extencion a buscar.
+                    </li>
+                </ol>
+            </li>
+            <br>
+            <span class="comando1">Nivel de parche</span>
+            <li><span class="comando2">Enumerar las actualizaciones instaladas en el sistema operativo.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >wmic qfe get Caption,Description,HotFixID,InstalledOn</code></pre>
+                <ol>
+                    <li>
+                        <span class="comando3"></span>wmic es una herramienta poderosa que tambien nos permite buscar
+                        vulnerabilidades de ruta de servicio no citadas, sin embargo esta obsoleto en Windows 10,
+                        version 21H1 y la
+                        version del 21H1 en Windows Server, por lo que se recomienda usar cmdlet
+                    </li>
+                </ol>
+            </li>
+            <br>
+            <span class="comando1">Conexiones de red</span>
+            <li><span class="comando2">Enumerar todos los puertos de escucha en el sistema.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >netstat -ano</code></pre>
+                <ol>
+                    <li><span class="comando3">-a</span>: muestra todas la conexiones activas y los puertos de escucha
+                        en el sistema.</li>
+                    <li><span class="comando3">-n</span>: evita la resolucion de nombres, las direcciones IP y los
+                        puertos se muestran con numeros en lugar de intentar resolver nombres mediante DNS.</li>
+                    <li><span class="comando3">-o</span>: muestra el ID del proceso usando cada conexion listada. </li>
+                </ol>
+            </li>
+            <br>
+            <span class="comando1">Tareas programadas</span>
+            <li><span class="comando2">Consulta de tareas programadas.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >schtasks /query /fo LIST /v</code></pre>
+            </li>
+            <br>
+            <span class="comando1">Drivers</span>
+            <li><span class="comando2">Enumerar los controladores disponibles en el sistema de destino donde puede que
+                    se encuentre vectores de escalamiento de privilegios.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >driverquery</code></pre>
+            </li>
+            <br>
+            <span class="comando1">Antivirus</span>
+            <li><span class="comando2">Enumerar los servicios de antivirus Windows Defender.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >sc query windefend</code></pre>
+            </li>
+            <li><span class="comando2">Enumerar los servicios de antivirus que corren en el sistema.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >sc queryex type=service</code></pre>
+            </li>
+            <li><span class="comando5">Ejecutar en CMD</span></li>
+
+            <br>
+            <span class="comando1">Software vulnerable</span>
+            <li><span class="comando2">Enumera el software instalado.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >wmic product</code></pre>
+            </li>
+            <li><span class="comando2">Filtrar la salida para obtener una salida mas limpia.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >wmic product get name,version,vendor</code></pre>
+            </li>
+            <li><span class="comando2">Enumera los servicios.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >wmic service list brief</code></pre>
+            </li>
+            <li><span class="comando2">Enumera los servicios pero filtrando con grep la salida para que sea mas
+                    entendible.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >wmic service list brief | findstr  "Running"</code></pre>
+            </li>
+            <li><span class="comando2">Si se necesita mas informacion de la salida del comando wmic (correr en
+                    CMD).</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >sc qc &lbrack;name service&rbrack;</code></pre>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                        >sc qc windefend</code></pre>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <script src="/javascript/prism.js"></script>
+
+    <mi-footer></mi-footer>
+</body>
+
+</html>

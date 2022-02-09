@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="fab fa-linux">HackSheet Bl3Ak</title>
+    <link rel="icon" href="/images/logo.ico">
+    <link href="/css/estilos.css" rel="stylesheet">
+    <link href="/css/button.css" rel="stylesheet">
+    <link href="/css/linux.css" rel="stylesheet">
+    <script type="module" src="/cmp/mi-footer.js"></script>
+    <script src="https://kit.fontawesome.com/f67adc3b08.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <img src="/images/logo.gif" class="imglogo" alt="logotipo">
+        <a href="/index.html" class="logo">HackSheet</a>
+        <div class="menu-toggle "></div>
+        <nav>
+            <ul>
+                <li><a href="/index.html" class="linea-center">Home</a> </li>
+
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+        </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-toggle').click(function () {
+                $('.menu-toggle').toggleClass('active')
+                $('nav').toggleClass('active')
+            })
+        })
+    </script>
+
+    <div class="main">
+        <img class="linux" src="/images/burp.png" alt="LogoBurpSuite">
+        <h1> Burp Suite</h1>
+
+        <ul>
+            <li><span class="comando1">Instalacion</span>
+
+                <ol>
+                    <li><span class="comando2">https://portswigger.net/burp/communitydownload</span>: descarga.</li>
+                    <li><span class="comando2">https://www.java.com/en/download/ </span>: requiere de java para
+                        ejecutarse.</li>
+                    <li><span
+                            class="comando2">https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/</span>:
+                        requiere de un proxy.
+
+                        <ol>
+                            <li><span class="comando3"> Nombre: burp suite </span></li>
+                            <li><span class="comando3"> Proxy Type: HTTP </span></li>
+                            <li><span class="comando3"> Proxy IP address: 127.0.0.1 </span></li>
+                            <li><span class="comando3"> Port: 8080 </span></li>
+                        </ol>
+                    </li>
+                </ol>
+
+            </li>
+
+            <li><span class="comando1">Lanzamiento de Burp Suite</span>
+                <ol>
+                    <li><span class="comando2">temporary proyect y next </span></li>
+                    <li><span class="comando2">nos preguntara la configuracion y le damos default y le damos
+                            eniniciar.</span></li>
+                </ol>
+            </li>
+            <br>
+
+
+
+            <li><span class="comando1">Proxy</span>: Lo que nos permite canalizar el tráfico a través de Burp Suite para
+                su posterior análisis.
+                <ol>
+                    <span class="pasos">Pasos a Seguir:</span>
+                    <li><span class="comando2">habilitamos el intercept</span></li>
+                    <li><span class="comando2">entramos a la siguiente direccion habilitando foxproxy</span>
+                        <ol>
+                            <li><span class="comando3">ctrl + r</span>: nos permite reenviar la solicitud.</li>
+                        </ol>
+                    </li>
+                    <li><span class="comando2">Http History es el nombre donde las solicitudes (GET/POST) son guardadas
+                            y se encuentran en proxy-HTTP history</span></li>
+                    <li><span class="comando2">ir proxy options</span>
+                        <ol>
+                            <li><span class="comando3">interset Client request</span></li>
+                            <li><span class="comando3">habilitar la regla AND</span>: es util despues de la definicion
+                                del objetivo, ya que podemos dejar la interceptacion activa de manera efectiva (a menos
+                                que necesitemos navegar sin interceptar) ya que no perturbara los sitios que estan fuera
+                                de nuestro alcance, es bueno activarlo si nesesitamos algo de google en el mismo
+                                navegador.</li>
+                            <li><span class="comando3">si tenemos problemas lo deshabilitamos el AND y lo enviamos
+                                    directamente con forward, para tener habilitado todas las opciones de
+                                    intercept</span></li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+
+            <br>
+            <li><span class="comando1">Target</span>: Cómo establecemos el alcance de nuestro proyecto. También podemos
+                usarlo para crear efectivamente un mapa del sitio de la aplicación que estamos probando.
+                <ol>
+                    <span class="pasos">Pasos a Seguir:</span>
+                    <li><span class="comando2">una vez seguido el paso de Proxy</span>
+                        <ol>
+                            <li><span class="comando3">navegamos por el resto de la aplicación para mapearla</span>:
+                                volvemos a brup suit y espandimos los distintos niveles del directorio de la aplicación
+                                a esta representacion se le llama "SITE MAP", ademas se lo conoce como navegacin normal
+                                de usuario o "happy path".</li>
+                        </ol>
+                    </li>
+                    <li><span class="comando2">click derecho lo enviamos a Repeated</span></li>
+                    <li><span class="comando2">click derecho lo enviamos a Sequencer</span></li>
+                </ol>
+            </li>
+
+            <br>
+
+
+            <li><span class="comando1">Intruder</span>: Herramienta increíblemente poderosa para todo, desde fuzzing de
+                campo hasta relleno de credenciales y más.
+                <ol>
+                    <li><span class="comando2">sniper</span>: el tipo de ataque más popular, recorre nuestras posiciones
+                        seleccionadas, colocando la siguiente carga útil disponible (elemento de nuestra lista de
+                        palabras) en cada posición por turno.Esto usa solo un conjunto de cargas útiles (una lista de
+                        palabras).</li>
+                    <li><span class="comando2">Battering Ram</span>: similar al Sniper, Battering Ram utiliza solo un
+                        conjunto de cargas útiles.A diferencia de Sniper, Battering Ram pone cada carga útil en cada
+                        posición seleccionada.Piense en cómo un ariete hace contacto a través de una gran superficie con
+                        una sola superficie, de ahí el nombre ariete para este tipo de ataque.</li>
+                    <li><span class="comando2">Pitchfork</span>: el tipo de ataque Pitchfork nos permite usar varios
+                        conjuntos de carga útil (uno por posición seleccionada) e iterar a través de ambos conjuntos de
+                        carga útil simultáneamente.Por ejemplo, si seleccionamos dos posiciones (digamos un campo de
+                        nombre de usuario y un campo de contraseña), podemos proporcionar una lista de carga útil de
+                        nombre de usuario y contraseña. Intruder luego recorrerá las combinaciones de nombres de usuario
+                        y contraseñas, lo que dará como resultado un número total de combinaciones que igualará el
+                        conjunto de carga útil más pequeño proporcionado.</li>
+                    <li><span class="comando2">Cluster Bomb (Bomba de racimo)</span>: el tipo de ataque Bomba de racimo
+                        nos permite usar varios conjuntos de carga útil(uno por posición seleccionada)e iterar a través
+                        de todas las combinaciones de las listas de carga útil que proporcionamos.Por ejemplo, si
+                        seleccionamos dos posiciones (digamos un campo de nombre de usuario y un campo de contraseña),
+                        podemos proporcionar una lista de carga útil de nombre de usuario y contraseña.Intruder luego
+                        recorrerá las combinaciones de nombres de usuario y contraseñas, lo que dará como resultado un
+                        número total de combinaciones que igualarán los nombres de usuario x contraseñas. Tenga en
+                        cuenta que esto puede ser bastante largo si está utilizando la edición comunitaria de Burp.</li>
+                </ol>
+                <br>
+                <ol>
+                    <span class="pasos">Pasos a Seguir:</span>
+                    <li><span class="comando2">nos vamos a introuder</span></li>
+                    <li><span class="comando2">Positions</span></li>
+                    <li><span class="comando2">escogemos sniper</span></li>
+                    <li><span class="comando2">seleccionamos Clear S</span></li>
+                    <li><span class="comando2">ahora resaltamos emal, con el cursor(seleccionar email para que este
+                            resaltado)
+                            ya que esta resaltado, ahora le damos en el boton Add S
+                        </span></li>
+                    <li><span class="comando2">opcion Payload options(Simple list)</span></li>
+                    <li><span class="comando2">cargamos la lista xplatform-shortened.txt</span></li>
+                    <li><span class="comando2">ahora bajamos mas hasta Playload Encoding</span></li>
+                    <li><span class="comando2">desmarcamos URL-encode these character</span></li>
+                    <li><span class="comando2">ya que si lo dejamos marcardo se codificaran y no sera reconocido por
+                            SQL</span></li>
+                    <li><span class="comando2">le damos en la parte superior derecha "Start attack"</span></li>
+                    <li><span class="comando2">tardara en finalizar el proceso</span></li>
+                    <li><span class="comando2">debemos que poner atencion en el status para vizualizar el status con
+                            numero "200"</span></li>
+                    <li><span class="comando2">200-> la solicitud ha sido exitosa</span></li>
+                </ol>
+
+            </li>
+
+            <br>
+            <li><span class="comando1">Repeater</span>: Nos permite "repetir" peticiones que se han hecho previamente
+                con o sin modificación. A menudo se utiliza como paso previo al fuzzing con el ya mencionado Intruder.
+                <ol>
+                    <span class="pasos">Pasos a Seguir:</span>
+                    <li><span class="comando2">clic derecho y elegimos el send to repeater.</span></li>
+                    <li><span class="comando2">nos vamos a repeater, en el apartado de request, nos vamos a raw</span>:
+                        podemos modificar email y password, entre otros.</li>
+                </ol>
+
+
+            </li>
+
+
+
+            <br>
+            <li><span class="comando1">Sequencer</span>: Analiza la "aleatoriedad random" presente en partes de la
+                aplicación web que están destinadas a ser impredecibles. Se suele utilizar para probar las cookies de
+                sesión y los que a continuacion se mencionan:
+                <ol>
+                    <li><span class="comando2">Session Tokens </span></li>
+                    <li><span class="comando2">Anti-CSRF (Falsificación de solicitud entre sitios) </span></li>
+                    <li><span class="comando2">Tokens de restablecimiento de contraseña (enviados con restablecimientos
+                            de contraseña que, en teoría, vinculan de forma única a los usuarios con sus solicitudes de
+                            restablecimiento de contraseña) </span></li>
+                    <li><span class="comando2">Session Tokens </span></li>
+                </ol>
+                <ol>
+                    <span class="pasos">Pasos a Seguir:</span>
+                    <li><span class="comando2"> nos vamos a Http History de Proxy</span></li>
+                    <li><span class="comando2"> en la parte de Response</span></li>
+                    <li><span class="comando2"> en la barrita de Serarch ponemos Set-Cookie</span></li>
+                    <li><span class="comando2"> y empezamos a deslizar la barra hasta encontrar el Set-Cookie</span>
+                    </li>
+                    <li><span class="comando2"> en este caso encontramos:
+                            <span class="comando3">
+                                $'http://10.10.86.148/socket.io/?EIO=3&transport=polling&t=Ngjag9y'</span> por poner un
+                            ejemplo
+                        </span> </li>
+                    <li><span class="comando2"> damos clic derecho -> Send to Sequencer</span></li>
+                    <li><span class="comando2"> en sequencer</span></li>
+                    <li><span class="comando2"> Live capture</span></li>
+                    <li><span class="comando2"> Start live capture</span></li>
+                    <li><span class="comando2"> se nos abrira otra pantalla y empezara el live capture</span></li>
+                    <li><span class="comando2"> dejamos que el sequencer ejecute y recopile 10,000 requests, para poder
+                            obtener todos los tokens
+                            recibidos en las repuestas.</span></li>
+                    <li><span class="comando2"> cuando llegue a esa cantida la pausamos y le damos en Analyze now</span>
+                    </li>
+                    <li><span class="comando2"> cuando llegue al final del analisis, se abriran nuevas ventanas donde se
+                            muestra un resumen general de la cantidad estimada de entropia</span></li>
+                    <li><span class="comando2">dentro de la muestra, junto con resultados detallados para cada tipo de
+                            prueba que se
+                            realizo.</span></li>
+
+                </ol>
+
+            </li>
+
+            <li><span class="comando1">Decoder</span>: Como su nombre indica, el decodificador es una herramienta que
+                nos permite realizar varias transformaciones en piezas de datos. Estas transformaciones varían desde la
+                decodificación/codificación a varias bases o codificación de URLs.
+
+                <ol>
+                    <span class="pasos">Pasos a Seguir:</span>
+                    <li><span class="comando2">nos vamos a target</span></li>
+                    <li><span class="comando2">buscamos nuestra maquina target</span></li>
+                    <li><span class="comando2">buscamos la carpeta API, en caso que la tenga</span></li>
+                    <li><span class="comando2">abrimos la carpeta API</span></li>
+                    <li><span class="comando2">abrimos la carpeta Challenges</span></li>
+                    <li><span class="comando2">buscamos el name=Score%20Board o el punto final del API</span></li>
+                    <li><span class="comando2">clic derecho -> copy URL</span></li>
+                    <li><span class="comando2">nos vamos a decoder</span></li>
+                    <li><span class="comando2">vemos que nuestra url
+                            http://10.10.46.251/api/Challenges/?name=Score%20Board
+                            seleccionamos Decode as URL</span></li>
+                    <li><span class="comando2">y vemos que se decodifico el %20 a space que es el codigo ascii
+                            http://10.10.46.251/api/Challenges/?name=Score Board</span></li>
+                    <li><span class="comando2">tambien se puede intentar en:
+                            https://gchq.github.io/CyberChef></span>
+                    </li>
+                    <li><span class="comando2">pegamos la URL</span></li>
+                    <li><span class="comando2">perations buscamos URL Decoder</span></li>
+                    <li><span class="comando2">bake y nos decodifica la url
+                        </span></li>
+                </ol>
+            </li>
+
+
+
+
+
+            <li><span class="comando1">Comparer</span>: es una herramienta que podemos utilizar para comparar diferentes
+                respuestas u otros datos como mapas del sitio o historiales de proxy (impresionante para probar
+                problemas de control de acceso). Es muy similar a la herramienta diff de Linux..</li>
+            <li><span class="comando1">Extender</span>: De forma similar a la adición de mods a un juego como Minecraft,
+                Extender nos permite añadir componentes como integraciones de herramientas, definiciones de escaneo
+                adicionales, y mucho más!.</li>
+            <li><span class="comando1">Scanner</span>: scáner de vulnerabilidad web automatizado que puede resaltar
+                áreas de la aplicación para una mayor investigación manual o una posible explotación con otra sección de
+                Burp. Esta característica, aunque no está en la edición comunitaria de Burp Suite, sigue siendo una
+                faceta clave para realizar una prueba de aplicaciones web.</li>
+
+            <li><span class="comando1">error 304 Not Modifiet</span>: borrar el historial, cache y cookies del navegador.</li>
+
+        </ul>
+    </div>
+
+
+
+
+    <mi-footer></mi-footer>
+</body>
+
+</html>
+

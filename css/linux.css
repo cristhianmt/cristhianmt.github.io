@@ -1,0 +1,165 @@
+.main {
+    margin: 40px;
+    padding-top: 100px;
+}
+
+h1 {
+    color: #ff073a;
+    text-align: center;
+}
+
+.main ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.main ul li::before {
+    font-family: fontawesome;
+    content: "\f120";
+    padding-right: 8px;
+    color: #0ff72e;
+    font-weight: 900;
+    line-height: 1cm;
+    font-size: 50%;
+}
+
+.enlace {
+    color: rgb(15, 253, 201);
+    background-color: transparent;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.enlace:hover {
+    color: rgb(122, 6, 255);
+    background-color: transparent;
+    font-weight: 900;
+}
+
+.enlace:active {
+    color: #48ff00;
+    background-color: transparent;
+    font-weight: 900;
+}
+
+.comando1 {
+    color: #ff2c87;
+    font-weight: 900;
+}
+
+.comando2 {
+    color: #00ffff;
+    font-weight: 900;
+}
+
+.comando3 {
+    color: #02fda4;
+    font-weight: 900;
+}
+
+.comando4 {
+    background-color: #000000;
+    font-weight: 900;
+}
+
+.comando5 {
+    background-color: #ff073a;
+    font-weight: 900;
+}
+
+.comando6 {
+    background-color: #07cdff;
+    font-weight: 900;
+}
+
+.pasos {
+    color: #fdf902;
+    font-weight: 900;
+    font-size: 25px;
+    font-family: fontawesome;
+    text-align: center;
+}
+
+.main ul li ol li {
+    list-style: none;
+}
+
+.main ul li ol li::before {
+    content: "-";
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    font-size: 120%;
+}
+
+.subcomando {
+    color: #000;
+}
+
+.linux {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100px;
+    margin-bottom: 50px;
+    border-radius: 50%;
+}
+
+.llave {
+    font-weight: 900;
+    color: #0e69d1;
+}
+
+.bash {
+    width: 30px;
+    object-position: 0px 25%;
+}
+
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width:50%;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.titulo{
+    color: #ffffff;
+    text-align: center;   
+    font-family: fantasy;
+}
+
+
+@media (max-width: 991px) {
+    .main {
+        margin: 15px;
+        padding-top: 100px;
+    }
+    .pasos{
+        color: #fdf902;
+        font-weight: 900;
+        font-size: 15px;
+        font-family: fontawesome;
+        text-align: center;
+    }
+    .comando2 {
+        font-weight: 700;
+    }
+    .image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 50%;
+        transition: transform .2s;
+    }
+    .image:hover {
+        -ms-transform: scale(2);
+        -webkit-transform: scale(2);
+        transform: scale(2);
+    }
+   
+}
