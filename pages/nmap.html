@@ -64,6 +64,8 @@
             <li><span class="comando1">nmap -sV &lt;target&gt; </span>: versión de servicios.</li>
             <li><span class="comando1">nmap -sN &lt;target&gt; </span>: escaneo TCP NULL.</li>
             <li><span class="comando1">nmap -sF &lt;target&gt; </span>: escaneo de TCP FIN.</li>
+            <li><span class="comando1">nmap -sY &lt;target&gt; </span>: escaneo de SCTP.</li>
+
 
             <li><span class="comando1">nmap --open&lt;target&gt;</span>: escaneo de puertos abiertos (TCP) y que no esten
                     filtrados.</li>
@@ -78,8 +80,8 @@
             <li><span class="comando1">nmap -vvb &lt;target&gt; </span>: proporciona un mejor nivel de informacion en la
                 salida esta opción es recomendable usar N.</li>
             <li><span class="comando1">nmap -oA &lt;target&gt; </span>: guardar los resultados de nmap; pero en los tres
-                formatos normales .</li>
-            <li><span class="comando1">nmap -oN &lt;target&gt; </span>: guardar los resultados en un formato normal .
+                formatos normales.</li>
+            <li><span class="comando1">nmap -oN &lt;target&gt; </span>: guardar los resultados en un formato normal.
             </li>
             <li><span class="comando1">nmap -oG &lt;target&gt; </span>: guardar los resultados en formato grepable.</li>
             <li><span class="comando1">nmap -a &lt;target&gt; </span>: escaneo agresivo, será muy ruidoso.</li>
@@ -137,7 +139,7 @@
 
 
 
-            <li><span class="comando1">Whatweb &lbrack;target&rbrack;</span>: capaz de reconocer las tecnologias utilizadas para
+            <li><span class="comando1">Whatweb &lbrack;IP target&rbrack;</span>: capaz de reconocer las tecnologias utilizadas para
                 sitios web direcciones de correo, web frameworks y base de datos.</li>
             <li>
                 <span class="comando2">Wappalyzer</span>: identifica las tecnologias usadas en los sitios web.
