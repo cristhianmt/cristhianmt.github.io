@@ -147,7 +147,7 @@ nav ul li a {
       cursor: pointer;
       text-align: center;
       font-size: 20px;
-      color: #d6e13d;
+      color: #3dcbe1;
   }
   .menu-toggle:before {
       content: '\f0c9';
