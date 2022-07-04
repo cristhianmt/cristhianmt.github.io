@@ -8,7 +8,7 @@
     <link rel="icon" href="/images/logo.ico">
     <link href="/css/estilos.css" rel="stylesheet">
     <link href="/css/button.css" rel="stylesheet">
-    <link href="/css/linux.css" rel="stylesheet" >
+    <link href="/css/linux.css" rel="stylesheet">
     <script type="module" src="/cmp/mi-footer.js"></script>
     <script src="https://kit.fontawesome.com/f67adc3b08.js" crossorigin="anonymous"></script>
 </head>
@@ -70,7 +70,8 @@
                         de los procesos. </li>
                     <li><span class="comando2">/sys</span>: contiene archivos del sistema.</li>
                     <li><span class="comando2">/usr</span>: contiene todos los archivos ejecutables.</li>
-                    <li><samp class="comando2">sudo -l</samp>: imprime los comando permitidos por los usuarios actuales.</li>
+                    <li><samp class="comando2">sudo -l</samp>: imprime los comando permitidos por los usuarios actuales.
+                    </li>
                     <li><span class="comando2">Nano /etc/sudoers </span>: dar permisos de ejecución de administrador.
                         <br>
                         Debajo de root poner:
@@ -290,6 +291,8 @@
                     <li><span class="comando2">purge &lt;app &gt;</span> : eliminar aplicación</li>
                     <li><span class="comando2">update --fix-missing</span>: error al actualizar los paquetes</li>
                 </ol>
+            <li><span class="comando2">nano /etc/apt/sources.list</span>: repositorios instalados en el sistema. </li>
+
             </li>
 
             <li>
@@ -323,16 +326,22 @@
                 <ol>
                     <li><samp class="comando2">x</samp>: extraer el archivo.</li>
                 </ol>
-            </li>     
-
-            <li><samp class="comando1">stty -a</samp>: informacion sobre la shell.
-            <ol>
-                <li><span class="comando2">rows &lt;number&gt;</span>: configurar el numero de filas.</li>
-                <li><span class="comando2">cols &lt;number&gt;</span>: configurar el numero de columnas.</li>
-            </ol>
-            
             </li>
 
+            <li><samp class="comando1">stty -a</samp>: informacion sobre la shell.
+                <ol>
+                    <li><span class="comando2">rows &lt;number&gt;</span>: configurar el numero de filas.</li>
+                    <li><span class="comando2">cols &lt;number&gt;</span>: configurar el numero de columnas.</li>
+                </ol>
+
+            </li>
+            <li><samp class="comando1">dpkg</samp>: administrador de paquetes.
+                <ol>
+                    <li><span class="comando2">-i &lt;packet.deb&gt;</span>: instalacion de paquetes.</li>
+                    <li><span class="comando2">-r &lt;name packet&gt;</span>: eliminacion de paquetes columnas.</li>
+                </ol>
+
+            </li>
 
         </ul>
     </div>

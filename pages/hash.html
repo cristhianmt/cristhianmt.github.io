@@ -51,6 +51,17 @@
                     crackstation</span></a>: sitio web para descifrar hashes.</li>
             <li> <a class="enlace" href="https://gchq.github.io/CyberChef/" target="_blank"><span>CyberChef</span></a>:
                 desencriptacion.</li>
+            <li> <a class="enlace" href="https://www.asciitohex.com/" target="_blank"><span>ASCII to Hex</span></a>:
+                desencriptacion.</li>
+            <li> <a class="enlace" href=" https://emn178.github.io/online-tools/index.html" target="_blank"><span>Online
+                        tools hashes</span></a>:
+                desencriptacion.</li>
+            <li> <a class="enlace" href="https://hashcat.net/wiki/doku.php?id=example_hashes"
+                    target="_blank"><span>Example hashes</span></a>:
+                tipos de hashes.</li>
+
+
+
 
             <br>
             <li><span class="comando2">Comprobacion de descarga por medio de autentificacion hash, mediante
@@ -83,12 +94,104 @@
                     >python3 hash-id.py &lbrack;hash&rbrack;</code></pre>
                 </ol>
             </li>
+            <li><span class="comando2">Identifica el tipo de hash que es, por medio de haiti.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >haiti &lbrack;hash&rbrack;</code></pre>
+                </ol>
+            </li>
+
+
+            <span class="pasos">Lyricpass</span>
+            <li> <a class="enlace" href="https://github.com/initstring/lyricpass.git"
+                    target="_blank"><span>lyricpass</span></a>:
+                Crear una lista de palabras basadas en letras de artistas.
+            </li>
+            <li><span class="comando2">Buscar lista de palabras en la web.</span>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >./lyricpass.py -a &lbrack;name of the artist &rbrack; -i &lbrack;out.txt&rbrack;</code></pre>
+                </ol>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >./lyricpass.py -a adele -i out.txt</code></pre>
+                </ol>
+            </li>
+
+            <span class="pasos">Pnwgen</span>
+            <li> <a class="enlace" href="git clone https://github.com/toxydose/pnwgen.git"
+                    target="_blank"><span>lyricpass</span></a>:
+                Crear una lista de palabras basadas en numeros telefonicos.
+            </li>
+            <li><span class="comando2">Crear lista de palabras.</span>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 pnwgen.py &lbrack;prefix&rbrack; &lbrack;suffix&rbrack; &lbrack;length&rbrack;</code></pre>
+                </ol>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >./pnwgen.py +1721 "" 7</code></pre>
+                </ol>
+            </li>
+            <span class="pasos">Wordlistctl</span>
+            <li><span class="comando2">Buscar lista de palabras en la web.</span>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 ./wordlistctl.py search &lbrack;name of the wordlist&rbrack;</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Buscar lista de palabras de manera local.</span>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 ./wordlistctl.py search -l &lbrack;name of the wordlist&rbrack;</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Descargar y descomprimir lista de palabras.</span>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3./wordlistctl.py fetch -l &lbrack;"name of the wordlist"&rbrack; -d fetch_term</code></pre>
+                </ol>
+            </li>
+
+            <span class="pasos">ttpassgen</span>
+            <li> <a class="enlace" href="https://pypi.org/project/ttpassgen/" target="_blank"><span>ttpassgen</span></a>
+            </li>
+            <li><span class="comando2">Crear una lista de palabras.</span>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 ttpassgen.py -r &lbrack;rules&rbrack; &lbrack;out.txt&rbrack;</code></pre>
+                </ol>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 ttpassgen.py -r [?l]{2}[12345]{4}[?s] symbols.txt</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Combinar listas de palabras.</span>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 ttpassgen.py --dictlist &lbrack;'file1.txt,file2.txt'&rbrack; --rule '$0$1' &lbrack;out.txt&rbrack;</code></pre>
+                </ol>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 ttpassgen.py --dictlist 'file1.txt,file2.txt' --rule '$0$1' combination.txt</code></pre>
+                </ol>
+            </li>
+            <span class="pasos">Mentalist</span>
+            <li> <a class="enlace" href="https://github.com/sc0tfree/mentalist"
+                    target="_blank"><span>mentalist</span></a>:
+                Crear una lista de palabras por medio de mutacion.
+            </li>
 
 
             <br>
             <br>
             <span class="pasos">John The Riper</span>
-
+            <li> <a class="enlace" href="https://www.openwall.com/john/doc/RULES.shtml"
+                    target="_blank"><span>Rules</span></a>:
+                Lista de reglas.</li>
+            <li> <a class="enlace" href="https://www.reydes.com/archivos/juan_the_ripper_reydes.html
+                    " target="_blank"><span>Rules</span></a>:
+                Lista de reglas.</li>
             <li><span class="comando1">John</span>
                 <ol>
                     <li><span class="comando2">instalacion de john the riper.</span></li>
@@ -113,7 +216,31 @@
                 </ol>
 
             </li>
+            <li><span class="comando1">Mostrar el formato del hashes</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers" data-start="1"
+                        >john --show --format=[format] &lbrack;file&rbrack;</code></pre>
+                </ol>
 
+            </li>
+            <li><span class="comando1">Editar las reglas</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers" data-start="1"
+                        >sudo nano /etc/john/john.conf</code></pre>
+                </ol>
+                <ol>
+                    <pre><code class="language-bash line-numbers" data-start="1"
+                        >[List.Rules:advice1]
+c$1$2$3$4$[$%&*-_+=#@~!]</code></pre>
+                </ol>
+            <li><span class="comando1">Cracking Hashes con reglas</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >john --format=raw-&lbrack;format&rbrack; --wordlist=/usr/share/wordlists/rockyou.txt --rules=&lbrack;rules&rbrack; &lbrack;file&rbrack;</code></pre>
+                </ol>
+
+            </li>
+            </li>
             <li><span class="comando1">Cracking Hashes</span>
                 <ol>
                     <pre><code class="language-bash line-numbers"data-start="1"
