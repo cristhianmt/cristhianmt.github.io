@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="fab fa-linux">HackSheet Bl3Ak</title>
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <link rel="icon" href="/images/logo.ico">
+    <link href="/css/estilos.css" rel="stylesheet">
+    <link href="/css/button.css" rel="stylesheet">
+    <link href="/css/linux.css" rel="stylesheet">
+    <script type="module" src="/cmp/mi-footer.js"></script>
+    <script src="https://kit.fontawesome.com/f67adc3b08.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <img src="/images/logo.gif" class="imglogo" alt="logotipo">
+        <a href="/index.html" class="logo">HackSheet</a>
+        <div class="menu-toggle "></div>
+        <nav>
+            <ul>
+                <li><a href="/index.html" class="linea-center">Home</a> </li>
+
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+        </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-toggle').click(function () {
+                $('.menu-toggle').toggleClass('active')
+                $('nav').toggleClass('active')
+            })
+        })
+    </script>
+
+
+    <div class="main">
+        <img class="linux" src="/images/gathering.png" alt="logoNmap">
+        <h1> Information Gathering</h1>
+        <ul>
+            <div class="pasos">Obtención de información de las tecnologías que usa</div>
+            <li><span class="comando2">BuiltWith: </span>
+
+                <a class="enlace" href="https://builtwith.com/" target="_blank"><span class="comando1"></span>
+                    Link de consulta</a>
+            </li>
+            <li><span class="comando2">Wappalyzer: </span>
+
+                <a class="enlace" href="https://www.wappalyzer.com/" target="_blank"><span class="comando1"></span>
+                    Link de consulta</a>
+            </li>
+            <li><span class="comando2">Whatweb</span>
+
+                <pre><code class="language-bash line-numbers"data-start="1"
+                                >whatweb &lbrack;DNS&rbrack;</code></pre>
+
+                </span>
+            </li>
+
+
+            <div class="pasos">Descarga de un sitio web completo</div>
+
+            <li><span class="httrack">DNS: </span>
+                <a class="enlace" href="https://www.httrack.com/" target="_blank"><span class="comando1"></span>
+                    Link de consulta</a>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                                >webHTTrack </code></pre>
+
+                </span>
+            </li>
+
+            <div class="pasos">Obtención de la dirección IP</div>
+
+            <li><span class="comando2">DNS</span>
+
+                <pre><code class="language-bash line-numbers"data-start="1"
+                                >host &lbrack;DNS&rbrack;</code></pre>
+
+                </span>
+            </li>
+            <li><span class="comando2">Búsqueda de la carpeta robots.txt</span>
+
+                <pre><code class="language-bash line-numbers"data-start="1"
+                            >http://&lbrack;DNS&rbrack;/&lbrack;robots.txt&rbrack;</code></pre>
+            </li>
+            <li><span class="comando2">Búsqueda de la carpeta sitemap.txt</span>
+
+                <pre><code class="language-bash line-numbers"data-start="1"
+                            >http://&lbrack;DNS&rbrack;/&lbrack;sitemap.xml&rbrack;</code></pre>
+            </li>
+            <li><span class="comando2">Whois</span>
+
+                <pre><code class="language-bash line-numbers"data-start="1"
+                            >whois &lbrack;DNS&rbrack;</code></pre>
+            </li>
+            <li><span class="comando2">Whois in browser: </span>
+                <a class="enlace" href="https://who.is/" target="_blank"><span class="comando1"></span>
+                    Link de consulta</a>
+            </li>
+            <br>
+
+            <div class="pasos">Website Footprinting</div>
+
+            <li><span class="comando2">Netcraft: </span>
+                <a class="enlace" href="https://www.netcraft.com/" target="_blank"><span class="comando1"></span>
+                    Link de consulta</a>
+            </li>
+            <div class="pasos">Identificar registros</div>
+
+            <li><span class="comando2">DNS Recon</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >dnsrecon -d &lbrack;DNS&rbrack;</code></pre>
+            </li>
+            <li><span class="comando2">DNSdumpster: </span>
+                <a class="enlace" href="https://dnsdumpster.com/ " target="_blank"><span class="comando1"></span>
+                    Link de consulta</a>
+            </li>
+            <br>
+            <div class="pasos">Web Application Firewall Fingerprinting</div>
+
+            <li><span class="comando2">wafw00f: </span>
+                <a class="enlace" href="https://github.com/EnableSecurity/wafw00f" target="_blank"><span
+                        class="comando1"></span>
+                    Link de consulta</a>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >wafw00f &lbrack;DNS&rbrack;</code></pre>
+            </li>
+            <li><span class="comando2">Pruebas para todas las instancias posibles de WAF</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >wafw00f &lbrack;DNS&rbrack; -a</code></pre>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >wafw00f &lbrack;DNS&rbrack; --findall</code></pre>
+            </li>
+            <br>
+            <div class="pasos">Subdomain Enumeration</div>
+            <li><span class="comando2">Sublist3r: </span>
+                <a class="enlace" href="https://github.com/aboul3la/Sublist3r.git" target="_blank"><span
+                        class="comando1"></span>
+                    Link de consulta</a>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >sublist3r -d &lbrack;DNS&rbrack; -e google,yahoo</code></pre>
+            </li>
+            <br>
+            <div class="pasos">Google Dorks</div>
+            <pre><code class="language- line-numbers"data-start="1"
+                >site:&lbrack;domain&rbrack;</code></pre>
+            <li><span class="comando2">Busqueda de un panel de administrador</span>
+                <pre><code class="language- line-numbers"data-start="1"
+                >site:&lbrack;domain&rbrack; inurl:admin</code></pre>
+            </li>
+            <li><span class="comando2">Busqueda de forums</span>
+                <pre><code class="language- line-numbers"data-start="1"
+                >site:&lbrack;domain&rbrack; inurl:forum</code></pre>
+            </li>
+            <li><span class="comando2">Busqueda de subdominios</span>
+                <pre><code class="language- line-numbers"data-start="1"
+                >site:*.&lbrack;domain&rbrack;</code></pre>
+            </li>
+            <li><span class="comando2">Busqueda de subdominios con panel de administrador</span>
+                <pre><code class="language- line-numbers"data-start="1"
+                >site:*.&lbrack;domain&rbrack; inurl:admin</code></pre>
+            </li>
+            <li><span class="comando2">Busqueda de subdominios con título de administrador</span>
+                <pre><code class="language- line-numbers"data-start="1"
+                >site:*.&lbrack;domain&rbrack; intitle:admin</code></pre>
+            </li>
+            <li><span class="comando2">Busqueda de subdominios con archivo</span>
+                <pre><code class="language- line-numbers"data-start="1"
+                >site:*.&lbrack;domain&rbrack; filetype:pdf</code></pre>
+                <pre><code class="language- line-numbers"data-start="1"
+                >site:*.&lbrack;domain&rbrack; filetype:pdf &lbrack;something&rbrack;</code></pre>
+                <pre><code class="language- line-numbers"data-start="1"
+                >site:*.&lbrack;domain&rbrack; filetype:pdf marketing, crm, xlsx, xls, sales</code></pre>
+                <pre><code class="language- line-numbers"data-start="1"
+                >site:*.&lbrack;domain&rbrack; filetype:&lbrack;xlsx, xls, doc, pdf, zip&rbrack;</code></pre>
+            </li>
+            <li><span class="comando2">Busqueda de información de empleados</span>
+                <pre><code class="language- line-numbers"data-start="1"
+                >site:&lbrack;domain&rbrack; employess</code></pre>
+            </li>
+            <li><span class="comando2">Busqueda de información de Instructores </span>
+                <pre><code class="language- line-numbers"data-start="1"
+                >site:&lbrack;domain&rbrack; instructors</code></pre>
+            </li>
+            <li><span class="comando2">Buscando el listado del directorio habilitado </span>
+                <pre><code class="language- line-numbers"data-start="1"
+                >intitle:index</code></pre>
+            </li>
+            <li><span class="comando2">Buscar una versión antigua de un sitio web</span>
+                <pre><code class="language- line-numbers"data-start="1"
+                >cache:&lbrack;domain&rbrack;</code></pre>
+            </li>
+            <li><span class="comando2">Buscar si algún sitio web ha listado, guardado, o expuesto inadvertidamente el
+                    directorios que tienen nombres se usuarios</span>
+                <pre><code class="language- line-numbers"data-start="1"
+                >inurl:auth_user_file.txt</code></pre>
+            </li>
+            <li><span class="comando2">Buscar si algún sitio web ha listado, guardado, o expuesto inadvertidamente el
+                    directorios que tienen contraseñas. una versión antigua de un sitio web</span>
+                <pre><code class="language- line-numbers"data-start="1"
+                >inurl:passwd.txt</code></pre>
+            </li>
+            <li><span class="comando2">Base de datos de google hacking: </span>
+                <a class="enlace" href="https://www.exploit-db.com/google-hacking-database" target="_blank"><span
+                        class="comando1"></span>
+                    Link de consulta</a>
+                <pre><code class="language- line-numbers"data-start="1"
+                        >site:gov.* intitle:"index of" *.cvs password  </code></pre>
+            </li>
+            <div class="pasos">Almacenamiento de las versiones antiguas de un sitio web</div>
+            <li><span class="comando2">Wayback: </span>
+                <a class="enlace" href="https://archive.org/web" target="_blank"><span class="comando1"></span>
+                    Link de consulta</a>
+            </li>
+
+            <br>
+            <div class="pasos">Email Harvesting </div>
+            <li><span class="comando2">theHarvester: </span>
+                <a class="enlace" href="https://github.com/laramies/theHarvester
+                " target="_blank"><span class="comando1"></span>
+                    Link de consulta</a>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >theHarvester -d &lbrack;DNS&rbrack; -b google,linkedin</code></pre>
+            </li>
+            <br>
+            <div class="pasos">Leaked Password Database</div>
+            <li><span class="comando2">ihavebeenpwned: </span>
+                <a class="enlace" href="https://haveibeenpwned.com/" target="_blank"><span class="comando1"></span>
+                    Link de consulta</a>
+            </li>
+            <br>
+            <br>
+            <div class="pasos">Active information gathering</div>
+            <li><span class="comando2">DNS Record: </span>
+                <ol>
+                    <li> A (Host address)</li>
+                    <li> AAAA (IPv6 host address)</li>
+                    <li> NS (Name Server)</li>
+                    <li> MX (Mail eXchange)</li>
+                    <li> CNAME (Canonical name for an alias)</li>
+                    <li> TXT (Descriptive text)</li>
+                    <li> HINFO (Host information)</li>
+                    <li> SOA (Start Of Authority) Domain authority</li>
+                    <li> SRV (location of service) Service Records</li>
+                    <li> PTR (Pointer) Resolves an IP address to a hostname</li>
+                </ol>
+            </li>
+            <li><span class="comando2">Zonetransfer: </span>
+                <a class="enlace" href="https://digi.ninja/projects/zonetransferme.php " target="_blank"><span
+                        class="comando1"></span>
+                    Link de consulta</a>
+            </li>
+            <li><span class="comando2">Dumpster: </span>
+                <a class="enlace" href="https://dnsdumpster.com/" target="_blank"><span class="comando1"></span>
+                    Link de consulta</a>
+            </li>
+            <li><span class="comando2">DNS Recon</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >Dnsrecon -d &lbrack;DNS&rbrack;</code></pre>
+            </li>
+            <li><span class="comando2">DNSenumspan>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >Dnsenum &lbrack;DNS&rbrack;</code></pre>
+            </li>
+            <li><span class="comando2">Dig: </span> herramienta de consultas a servidores DNS.
+                <pre><code class="language-bash line-numbers"data-start="1"
+                >Dig axfr &lbrack;@name-sever&rbrack; &lbrack;DNS&rbrack;</code></pre>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                >Dig axfr @nsztm1.digi.ninja zonetransfer.me</code></pre>
+            </li>
+            <li><span class="comando2">Fierce:</span> herramienta de escaneo de DNS que ayuda a localizar espacios IP no
+                contiguos y nombres de host contra el dominio especificado.
+                <pre><code class="language-bash line-numbers"data-start="1"
+                >Fierce --domain &lbrack;DNS&rbrack;</code></pre>
+            </li>
+            <li><span class="comando2">Nmap:</span> descubrimiento de HOST.
+                <pre><code class="language-bash line-numbers"data-start="1"
+                >nmap -sn &lbrack;DNS&rbrack;</code></pre>
+            </li>
+            <li><span class="comando2">netdiscover:</span> envia solicitudes ARP.
+                <pre><code class="language-bash line-numbers"data-start="1"
+                >sudo  netdiscover -I eth0 -r &lbrack;DNS&rbrack;</code></pre>
+            </li>
+        </ul>
+    </div>
+
+
+    <script src="/javascript/prism.js"></script>
+
+    <mi-footer></mi-footer>
+</body>
+
+</html>
