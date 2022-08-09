@@ -45,20 +45,46 @@
 
 
     <div class="main">
-        <img class="linux" src="/images/network.png" alt="logoSqlInjection">
+        <img class="linux" src="/images/network.png" alt="logo network">
         <h1> Linea de comandos de Redes</h1>
         <br>
         <div class="pasos">Network</div>
 
         <ul>
+            <li><span class="comando1">Conectividad</span>
+                <ol>
+                    <li><span class="comando2">PING</span>
+                        <pre><code class="language-bash line-numbers"data-start="1"
+                        >ping -c 1 &lbrack;DNS&rbrack;</code></pre>
+                    </li>
+                    <li><span class="comando2">FPING: </span> enviara sondas de eco ICMP a multiples hosts.
+                        <br>
+                        <a class="enlace" href="https://www.ripe.net/about-us/press-centre/IPv4CIDRChart_2015.pdf"
+                            target="_blank"><span class="comando1"></span>
+                            Prefix</a>
+                        <pre><code class="language-bash line-numbers"data-start="1"
+                        >fping -I eth0 -g &lbrack;DNS&rbrack;/prefix -a 2>/dev/null</code></pre>
+                        <pre><code class="language-bash line-numbers"data-start="1"
+                        >fping -I eth0 -g 10.10.10.1/24 -a 2>/dev/null</code></pre>
+                    </li>
+                    <li><span class="comando2">ARP-SCAN</span>
+                        <pre><code class="language-bash line-numbers"data-start="1"
+                        >arp-scan -I eth0 -g &lbrack;DNS&rbrack;</code></pre>
+                        <pre><code class="language-bash line-numbers"data-start="1"
+                        >arp-scan -I eth0 -g &lbrack;DNS&rbrack;/prefix</code></pre>
+                    </li>
+                </ol>
+            </li>
             <li><span class="comando1">Routing Tables</span>
 
                 <ol>
                     <li><span class="comando2">Linux </span>
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                            >ip a s</code></pre>
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >ip route</code></pre>
                     </li>
-                    li><span class="comando2">Linux </span>
+                    <li><span class="comando2">Linux </span>
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >route</code></pre>
                     </li>
@@ -148,7 +174,7 @@
                         <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >netstat -ano</code></pre>
                     </li>
-                    
+
 
 
                 </ol>
@@ -166,7 +192,8 @@
                         >sudo python3 -m http.server 80</code></pre>
             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
                         >sudo python –m SimpleHTTPServer</code></pre>
-            <span class="comando2">SimpleHTTPPutServer, se utiliza con curl</span>: cURL es una herramienta de línea de comandos para obtener o enviar datos utilizando la sintaxis de URL.
+            <span class="comando2">SimpleHTTPPutServer, se utiliza con curl</span>: cURL es una herramienta de línea de
+            comandos para obtener o enviar datos utilizando la sintaxis de URL.
             <pre><code class="language-python line-numbers" style="white-space:pre-wrap;"data-start="1"
             >
 #!/usr/bin/python

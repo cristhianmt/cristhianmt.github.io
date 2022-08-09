@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="fab fa-linux">HackSheet Bl3Ak</title>
+    <link rel="stylesheet" href="/css/prism.css">
+    <link rel="icon" href="/images/logo.ico">
+    <link href="/css/estilos.css" rel="stylesheet">
+    <link href="/css/button.css" rel="stylesheet">
+    <link href="/css/linux.css" rel="stylesheet">
+
+
+    <script type="module" src="/cmp/mi-footer.js"></script>
+    <script src="https://kit.fontawesome.com/f67adc3b08.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <img src="/images/logo.gif" class="imglogo" alt="logotipo">
+        <a href="/index.html" class="logo">HackSheet</a>
+        <div class="menu-toggle "></div>
+        <nav>
+            <ul>
+                <li><a href="/index.html" class="linea-center">Home</a> </li>
+
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+        </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-toggle').click(function () {
+                $('.menu-toggle').toggleClass('active')
+                $('nav').toggleClass('active')
+            })
+        })
+    </script>
+
+
+    <div class="main">
+        <img class="linux" src="/images/smb.png" alt="logo smb">
+        <h1> Protocolo SMB </h1>
+        <br>
+        <li><span class="comando1">Puertos recomendables</span>
+            <span class="comando4"> 139 ó 445 </span>
+            <div class="pasos">NMAP</div>
+            <ul>
+                <li><span class="comando2">smb-protocols</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >nmap -p445 --script smb-protocols &lbrack;target&rbrack;</code></pre>
+                </li>
+                <li><span class="comando2">smb-security-mode</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >nmap -p445 --script smb-security-mode &lbrack;target&rbrack;</code></pre>
+                </li>
+                <li><span class="comando2">smb-os-discovery</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >nmap -p445 --script smb-os-discovery &lbrack;target&rbrack;</code></pre>
+                </li>
+                <li><span class="comando2">smb-enum-sessions </span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >nmap -p445 --script smb-enum-sessions &lbrack;target&rbrack;</code></pre>
+                </li>
+                <li><span class="comando2">smb-enum-shares </span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >nmap -p445 --script smb-enum-shares  &lbrack;target&rbrack;</code></pre>
+                </li>
+                <li><span class="comando2">smb-enum-sessions & script-args </span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >nmap -p445 --script smb-enum-sessions --script-args smbusername=&lbrack;user name&rbrack;,smbpassword=&lbrack;password&rbrack; &lbrack;target&rbrack;</code></pre>
+                </li>
+                <li><span class="comando2">smb-enum-shares & script-args</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >nmap -p445 --script smb-enum-shares --script-args smbusername=&lbrack;user name&rbrack;,smbpassword=&lbrack;password&rbrack; &lbrack;target&rbrack;</code></pre>
+                </li>
+                <li><span class="comando2">smb-enum-users & script-args</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >nmap -p445 --script smb-enum-users --script-args smbusername=&lbrack;user name&rbrack;,smbpassword=&lbrack;password&rbrack; &lbrack;target&rbrack;</code></pre>
+                </li>
+                <li><span class="comando2">smb-server-stats & script-args</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >nmap -p445 --script smb-server-stats --script-args smbusername=&lbrack;user name&rbrack;,smbpassword=&lbrack;password&rbrack; &lbrack;target&rbrack;</code></pre>
+                </li>
+                <li><span class="comando2">smb-enum-domains & script-args</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >nmap -p445 --script smb-enum-domains --script-args smbusername=&lbrack;user name&rbrack;,smbpassword=&lbrack;password&rbrack; &lbrack;target&rbrack;</code></pre>
+                </li>
+                <li><span class="comando2">smb-enum-groups & script-args</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >nmap -p445 --script smb-enum-groups --script-args smbusername=&lbrack;user name&rbrack;,smbpassword=&lbrack;password&rbrack; &lbrack;target&rbrack;</code></pre>
+                </li>
+                <li><span class="comando2">smb-enum-services & script-args</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >nmap -p445 --script smb-enum-services --script-args smbusername=&lbrack;user name&rbrack;,smbpassword=&lbrack;password&rbrack; &lbrack;target&rbrack;</code></pre>
+                </li>
+                <li><span class="comando2">smb-enum-shares,smb-ls & script-args</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >nmap -p445 --script smb-enum-shares,smb-ls --script-args smbusername=&lbrack;user name&rbrack;,smbpassword=&lbrack;password&rbrack; &lbrack;target&rbrack;</code></pre>
+                </li>
+            </ul>
+
+            <div class="pasos">SMBMap</div>
+            <ul>
+                <li><span class="comando2">Null session</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >smbmap -u guest -p “” -d . -H &lbrack;target&rbrack;</code></pre>
+                </li>
+                <li><span class="comando2">user session</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >smbmap -u &lbrack;username&rbrack; -p &lbrack;password&rbrack; -d . -H &lbrack;target&rbrack;</code></pre>
+                </li>
+                <li><span class="comando2">comando ipconfig</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >smbmap -H &lbrack;target&rbrack; -u &lbrack;username&rbrack; -p &lbrack;password&rbrack; -x &apos;ipconfig&apos;</code></pre>
+                </li>
+                <li><span class="comando2">comando ls</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >smbmap -H &lbrack;target&rbrack; -u &lbrack;username&rbrack; -p &lbrack;password&rbrack; -L</code></pre>
+                </li>
+                <li><span class="comando2">Conectar a una unidad de almacenamiento</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >smbmap -H &lbrack;target&rbrack; -u &lbrack;username&rbrack; -p &lbrack;password&rbrack; -r &apos;C$&apos;</code></pre>
+                </li>
+                <li><span class="comando2">Subir un archivo </span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >smbmap -H &lbrack;target&rbrack; -u &lbrack;username&rbrack; -p &lbrack;password&rbrack; --upload &apos;&lbrack;/path/file&rbrack;&apos; &apos;C$\file&apos;</code></pre>
+                </li>
+            </ul>
+
+
+            <div class="pasos">MSF5</div>
+            <ul>
+                <li><span class="comando2">SMB version</span>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >msf5> use auxiliary/scanner/smb/smb_version</code></pre>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >msf5 auxiliary(/scanner/smb/smb_version) > options</code></pre>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >msf5 auxiliary(/scanner/smb/smb_version) > set rhosts &lbrack;target&rbrack;</code></pre>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >msf5 auxiliary(/scanner/smb/smb_version) > options</code></pre>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >msf5 auxiliary(/scanner/smb/smb_version) > run</code></pre>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >msf5 auxiliary(/scanner/smb/smb_version) > exploit</code></pre>
+                </li>
+            </ul>
+
+            <div class="pasos">Nmblookup</div>
+            <ul>
+                <li><span class="comando2">Utiliza protocolo NetBIOS</span>: 
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >nmblookup -A &lbrack;target&rbrack;</code></pre>
+                </li>
+            </ul>
+            <div class="pasos">Smbclient</div>
+            <ul>
+                <li><span class="comando2">conectarnos a una session Null mediante smbclient</span>: 
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >smbclient -L &lbrack;target&rbrack; -N</code></pre>
+                </li>
+            </ul>
+            <div class="pasos">Rpcclient</div>
+            <ul>
+                <li><span class="comando2">cuando tenemos session Null podemos conectarnos mediante rpcclient </span>: 
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >rpcclient -U “” -N &lbrack;target&rbrack; -N</code></pre>
+                </li>
+            </ul>
+
+    </div>
+
+
+    <script src="/javascript/prism.js"></script>
+    <mi-footer></mi-footer>
+</body>
+
+</html>
