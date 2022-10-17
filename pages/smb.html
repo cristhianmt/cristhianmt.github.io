@@ -139,46 +139,46 @@
             <ul>
                 <li><span class="comando2">SMB version</span>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5> use auxiliary/scanner/smb/smb_version</code></pre>
+                    >use auxiliary/scanner/smb/smb_version</code></pre>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 auxiliary(/scanner/smb/smb_version) > options</code></pre>
+                    >options</code></pre>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 auxiliary(/scanner/smb/smb_version) > set rhosts &lbrack;target&rbrack;</code></pre>
+                    >set rhosts &lbrack;target&rbrack;</code></pre>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 auxiliary(/scanner/smb/smb_version) > options</code></pre>
+                    >options</code></pre>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 auxiliary(/scanner/smb/smb_version) > run</code></pre>
+                    >run</code></pre>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 auxiliary(/scanner/smb/smb_version) > exploit</code></pre>
+                    >exploit</code></pre>
                 </li>
                 <li><span class="comando2">Probar un inicio de sesión SMB en una variedad de máquinas</span>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 > use auxiliary/scanner/smb/smb_login</code></pre>
+                    > use auxiliary/scanner/smb/smb_login</code></pre>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 auxiliary(/scanner/smb/smb_ login) > options</code></pre>
+                    > auxiliary(/scanner/smb/smb_ login) > options</code></pre>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 auxiliary(/scanner/smb/smb_ login) > set rhosts &lbrack;target&rbrack;</code></pre>
+                    > auxiliary(/scanner/smb/smb_ login) > set rhosts &lbrack;target&rbrack;</code></pre>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 auxiliary(/scanner/smb/smb_ login) > set pass_file /usr/share/wordlists/metasploit/unix_passwords.txt </code></pre>
+                    > auxiliary(/scanner/smb/smb_ login) > set pass_file /usr/share/wordlists/metasploit/unix_passwords.txt </code></pre>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 auxiliary(/scanner/smb/smb_ login) > set smbuser &lbrack;target&rbrack;</code></pre>
+                    > auxiliary(/scanner/smb/smb_ login) > set smbuser &lbrack;target&rbrack;</code></pre>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 auxiliary(/scanner/smb/smb_ login) > run </code></pre>
+                    > auxiliary(/scanner/smb/smb_ login) > run </code></pre>
                 </li>
                 <li><span class="comando2">Si entramos un SMB, tenemos una posibilidad de que podamos
                         entrar en otros servicios que se canalizan a través de pipes (tuberías)</span>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 > use auxiliary/scanner/smb/pipe_auditor</code></pre>
+                    >use auxiliary/scanner/smb/pipe_auditor</code></pre>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 auxiliary(/scanner/smb/pipe_auditor) > set smbuser &lbrack;user&rbrack;</code></pre>
+                    >set smbuser &lbrack;user&rbrack;</code></pre>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 auxiliary(/scanner/smb/pipe_auditor) > set smbpass &lbrack;passwd&rbrack;</code></pre>
+                    >set smbpass &lbrack;passwd&rbrack;</code></pre>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 auxiliary(/scanner/smb/pipe_auditor) > set rhosts &lbrack;target&rbrack;</code></pre>
+                    >rhosts &lbrack;target&rbrack;</code></pre>
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 auxiliary(/scanner/smb/pipe_auditor) > options</code></pre>  
+                    >options</code></pre>  
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >msf5 auxiliary(/scanner/smb/pipe_auditor) > run </code></pre>
+                    >run </code></pre>
                 </li>
             </ul>
 
@@ -208,11 +208,11 @@
                 </li>
                 <li><span class="comando2">Buscar nombres y administradores</span>:
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >Rpcclient $> lookupnnames admin </code></pre>
+                    >rpcclient $> lookupnnames admin </code></pre>
                 </li>
                 <li><span class="comando2">Enumerar usuarios </span>:
                     <pre><code class="language-bash line-numbers"data-start="1"
-                    >Rpcclient $> enumdomusers</code></pre>
+                    >rpcclient $> enumdomusers</code></pre>
                 </li>
             </ul>
             <div class="pasos">Enum4linux</div>

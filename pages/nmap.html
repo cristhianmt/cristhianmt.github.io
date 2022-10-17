@@ -54,7 +54,7 @@
             <li><span class="comando1">nmap -sS &lt;target&gt; </span>: escaneo TCP SYN.</li>
             <li><span class="comando1">nmap -sU &lt;target&gt; </span>: escaneo UDP.
                 <ol>
-                    <li style="width: 95%;"><span class="comando5">Cuando se envia un paquete UDP abierto, no debería
+                    <li style="width: 95%;"><span class="comando5">Cuando se envía un paquete UDP abierto, no debería
                             haber respuesta cuando
                             esto sucede se le refiere como puerto<span class="comando6"> open|filtered</span> por lo que
                             se traduce que podría estar
@@ -67,17 +67,17 @@
             <li><span class="comando1">nmap -sY &lt;target&gt; </span>: escaneo de SCTP.</li>
 
 
-            <li><span class="comando1">nmap --open&lt;target&gt;</span>: escaneo de puertos abiertos (TCP) y que no esten
+            <li><span class="comando1">nmap --open&lt;target&gt;</span>: escaneo de puertos abiertos (TCP) y que no estén
                     filtrados.</li>
-            <li><span class="comando1">nmap --min-rate 5000</span>: emitir paquetes no mas letos que 5000 paquetes por
-                segundo, ir mas rapido.</li>
-            <li><span class="comando1">nmap -n&lt;target&gt;</span>: escaneo sin resolucion dns.</li>
-            <li><span class="comando1">nmap -Pn&lt;target&gt;</span>: para no aplicar host discovery, atraves del protocolo de
+            <li><span class="comando1">nmap --min-rate 5000</span>: emitir paquetes no mas lentos que 5000 paquetes por
+                segundo, ir mas rápido.</li>
+            <li><span class="comando1">nmap -n&lt;target&gt;</span>: escaneo sin resolución dns.</li>
+            <li><span class="comando1">nmap -Pn&lt;target&gt;</span>: para no aplicar host discovery, a traves del protocolo de
                     resolucion de direcciones(ARP).</li>
             <li><span class="comando1">nmap -sx &lt;target&gt; </span>: escaneo xmas y muestra una bandera urg, se usa
                 mas para el firewall evasion.</li>
-            <li><span class="comando1">nmap -v &lt;target&gt; </span>: proporciona mas informacion en la salida.</li>
-            <li><span class="comando1">nmap -vvb &lt;target&gt; </span>: proporciona un mejor nivel de informacion en la
+            <li><span class="comando1">nmap -v &lt;target&gt; </span>: proporciona mas información en la salida.</li>
+            <li><span class="comando1">nmap -vvb &lt;target&gt; </span>: proporciona un mejor nivel de información en la
                 salida esta opción es recomendable usar N.</li>
             <li><span class="comando1">nmap -oA &lt;target&gt; </span>: guardar los resultados de nmap; pero en los tres
                 formatos normales.</li>
@@ -97,8 +97,8 @@
             <li><span class="comando1">nmap -top-ports 20 &lt;target&gt; </span>: escanea los 20 puertos udp mas
                 utilizados.</li>
 
-            <li><span class="comando1">nmap -sn &lt;target&gt; </span>: barrido ping donde envia un paquete icmp a cada
-                posible direccion ip lo que se traduce al ver que direcciones ip contiene los hots activos y cuales no.
+            <li><span class="comando1">nmap -sn &lt;target&gt; </span>: barrido ping donde envía un paquete icmp a cada
+                posible dirección ip lo que se traduce al ver que direcciones ip contiene los hots activos y cuales no.
                 <pre><code class="language-bash line-numbers"data-start="1"
                     >nmap -sn 192.168.0.1-254</code></pre>
                 <pre><code class="language-bash line-numbers"data-start="1"
@@ -120,15 +120,15 @@
             <li><span class="comando1">nmap --script=brute&lt;target&gt;</span>: intento de usar fuerza bruta de las
                 credenciales para ejecutar servicio.</li>
             <li><span class="comando1">nmap --script=discovery&lt;target&gt;</span>: intento de consultar los servicios
-                en ejecución para obtener mas informacion sobre la red.</li>
-            <li><span class="comando2">Escaneo "rapido" pero altamente ruidosos.</span></li>
+                en ejecución para obtener mas información sobre la red.</li>
+            <li><span class="comando2">Escaneo "rápido" pero altamente ruidosos.</span></li>
             <pre><code class="language-bash line-numbers"data-start="1"
                     >nmap -p- --open -T5 -v -n [target]</code></pre>
-            <li><span class="comando2">Escaneo "super rapido" pero altamente ruidosos.</span></li>
+            <li><span class="comando2">Escaneo "super rápido" pero altamente ruidosos.</span></li>
             <pre><code class="language-bash line-numbers"data-start="1"
                 >nmap -p- -sS --min-rate 5000 --open -vvv -n -Pn &lbrack;target&rbrack; -oG &lbrack;name file&rbrack;</code></pre>
 
-            <li><span class="comando2">Lanzar scripts basicos de
+            <li><span class="comando2">Lanzar scripts básicos de
                     reconocimiento y detectar la version de servicios que corre en los puertos.</span></li>
             <pre><code class="language-bash line-numbers"data-start="1"
                     >nmap -sC -sV -p&lbrack;ports&rbrack; -oN &lbrack;file&rbrack; &lbrack;target&rbrack;</code></pre>
@@ -139,12 +139,12 @@
 
 
 
-            <li><span class="comando1">Whatweb &lbrack;IP target&rbrack;</span>: capaz de reconocer las tecnologias utilizadas para
+            <li><span class="comando1">Whatweb &lbrack;IP target&rbrack;</span>: capaz de reconocer las tecnologías utilizadas para
                 sitios web direcciones de correo, web frameworks y base de datos.</li>
             <li>
                 <span class="comando2">Wappalyzer</span>: identifica las tecnologias usadas en los sitios web.
                 <a class="enlace" href="https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/" target="_blank">
-                    <span class="comando1"></span>
+                    <span class="enlace"></span>
                     Link de descarga
                 </a>
             </li>

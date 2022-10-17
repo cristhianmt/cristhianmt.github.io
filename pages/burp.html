@@ -81,7 +81,7 @@
                 <ol>
                     <span class="pasos">Pasos a Seguir:</span>
                     <li><span class="comando2">habilitamos el intercept</span></li>
-                    <li><span class="comando2">entramos a la siguiente direccion habilitando foxproxy</span>
+                    <li><span class="comando2">entramos a la siguiente dirección habilitando foxproxy</span>
                         <ol>
                             <li><span class="comando3">ctrl + r</span>: nos permite reenviar la solicitud.</li>
                         </ol>
@@ -91,10 +91,10 @@
                     <li><span class="comando2">ir proxy options</span>
                         <ol>
                             <li><span class="comando3">interset Client request</span></li>
-                            <li><span class="comando3">habilitar la regla AND</span>: es util despues de la definicion
+                            <li><span class="comando3">habilitar la regla AND</span>: es util después de la definición
                                 del objetivo, ya que podemos dejar la interceptacion activa de manera efectiva (a menos
-                                que necesitemos navegar sin interceptar) ya que no perturbara los sitios que estan fuera
-                                de nuestro alcance, es bueno activarlo si nesesitamos algo de google en el mismo
+                                que necesitemos navegar sin interceptar) ya que no perturbara los sitios que están fuera
+                                de nuestro alcance, es bueno activarlo si necesitamos algo de google en el mismo
                                 navegador.</li>
                             <li><span class="comando3">si tenemos problemas lo deshabilitamos el AND y lo enviamos
                                     directamente con forward, para tener habilitado todas las opciones de
@@ -112,9 +112,9 @@
                     <span class="pasos">Pasos a Seguir:</span>
                     <li><span class="comando2">una vez seguido el paso de Proxy</span>
                         <ol>
-                            <li><span class="comando3">navegamos por el resto de la aplicación para mapearla</span>:
-                                volvemos a brup suit y espandimos los distintos niveles del directorio de la aplicación
-                                a esta representacion se le llama "SITE MAP", ademas se lo conoce como navegacin normal
+                            <li><span class="comando3">navegamos por el resto de la aplicación para mapear</span>:
+                                volvemos a burp suit y expandimos los distintos niveles del directorio de la aplicación
+                                a esta representación se le llama "SITE MAP", ademas se lo conoce como navegación normal
                                 de usuario o "happy path".</li>
                         </ol>
                     </li>
@@ -160,19 +160,19 @@
                     <li><span class="comando2">Positions</span></li>
                     <li><span class="comando2">escogemos sniper</span></li>
                     <li><span class="comando2">seleccionamos Clear S</span></li>
-                    <li><span class="comando2">ahora resaltamos emal, con el cursor(seleccionar email para que este
+                    <li><span class="comando2">ahora resaltamos email, con el cursor(seleccionar email para que este
                             resaltado)
-                            ya que esta resaltado, ahora le damos en el boton Add S
+                            ya que esta resaltado, ahora le damos en el botón Add S
                         </span></li>
-                    <li><span class="comando2">opcion Payload options(Simple list)</span></li>
+                    <li><span class="comando2">opción Payload options(Simple list)</span></li>
                     <li><span class="comando2">cargamos la lista xplatform-shortened.txt</span></li>
                     <li><span class="comando2">ahora bajamos mas hasta Playload Encoding</span></li>
                     <li><span class="comando2">desmarcamos URL-encode these character</span></li>
-                    <li><span class="comando2">ya que si lo dejamos marcardo se codificaran y no sera reconocido por
+                    <li><span class="comando2">ya que si lo dejamos marcado se codificaran y no sera reconocido por
                             SQL</span></li>
                     <li><span class="comando2">le damos en la parte superior derecha "Start attack"</span></li>
                     <li><span class="comando2">tardara en finalizar el proceso</span></li>
-                    <li><span class="comando2">debemos que poner atencion en el status para vizualizar el status con
+                    <li><span class="comando2">debemos que poner atención en el status para visualizar el status con
                             numero "200"</span></li>
                     <li><span class="comando2">200-> la solicitud ha sido exitosa</span></li>
                 </ol>
@@ -197,7 +197,7 @@
             <br>
             <li><span class="comando1">Sequencer</span>: Analiza la "aleatoriedad random" presente en partes de la
                 aplicación web que están destinadas a ser impredecibles. Se suele utilizar para probar las cookies de
-                sesión y los que a continuacion se mencionan:
+                sesión y los que a continuación se mencionan:
                 <ol>
                     <li><span class="comando2">Session Tokens </span></li>
                     <li><span class="comando2">Anti-CSRF (Falsificación de solicitud entre sitios) </span></li>
@@ -210,7 +210,7 @@
                     <span class="pasos">Pasos a Seguir:</span>
                     <li><span class="comando2"> nos vamos a Http History de Proxy</span></li>
                     <li><span class="comando2"> en la parte de Response</span></li>
-                    <li><span class="comando2"> en la barrita de Serarch ponemos Set-Cookie</span></li>
+                    <li><span class="comando2"> en la barrita de Search ponemos Set-Cookie</span></li>
                     <li><span class="comando2"> y empezamos a deslizar la barra hasta encontrar el Set-Cookie</span>
                     </li>
                     <li><span class="comando2"> en este caso encontramos:
@@ -222,14 +222,14 @@
                     <li><span class="comando2"> en sequencer</span></li>
                     <li><span class="comando2"> Live capture</span></li>
                     <li><span class="comando2"> Start live capture</span></li>
-                    <li><span class="comando2"> se nos abrira otra pantalla y empezara el live capture</span></li>
+                    <li><span class="comando2"> se nos abrirá otra pantalla y empezara el live capture</span></li>
                     <li><span class="comando2"> dejamos que el sequencer ejecute y recopile 10,000 requests, para poder
                             obtener todos los tokens
                             recibidos en las repuestas.</span></li>
-                    <li><span class="comando2"> cuando llegue a esa cantida la pausamos y le damos en Analyze now</span>
+                    <li><span class="comando2"> cuando llegue a esa cantidad la pausamos y le damos en Analyze now</span>
                     </li>
-                    <li><span class="comando2"> cuando llegue al final del analisis, se abriran nuevas ventanas donde se
-                            muestra un resumen general de la cantidad estimada de entropia</span></li>
+                    <li><span class="comando2"> cuando llegue al final del análisis, se abrirán nuevas ventanas donde se
+                            muestra un resumen general de la cantidad estimada de entropía</span></li>
                     <li><span class="comando2">dentro de la muestra, junto con resultados detallados para cada tipo de
                             prueba que se
                             realizo.</span></li>
@@ -257,11 +257,11 @@
                             seleccionamos Decode as URL</span></li>
                     <li><span class="comando2">y vemos que se decodifico el %20 a space que es el codigo ascii
                             http://10.10.46.251/api/Challenges/?name=Score Board</span></li>
-                    <li><span class="comando2">tambien se puede intentar en:
+                    <li><span class="comando2">también se puede intentar en:
                             https://gchq.github.io/CyberChef></span>
                     </li>
                     <li><span class="comando2">pegamos la URL</span></li>
-                    <li><span class="comando2">perations buscamos URL Decoder</span></li>
+                    <li><span class="comando2">operations buscamos URL Decoder</span></li>
                     <li><span class="comando2">bake y nos decodifica la url
                         </span></li>
                 </ol>
@@ -277,7 +277,7 @@
             <li><span class="comando1">Extender</span>: De forma similar a la adición de mods a un juego como Minecraft,
                 Extender nos permite añadir componentes como integraciones de herramientas, definiciones de escaneo
                 adicionales, y mucho más!.</li>
-            <li><span class="comando1">Scanner</span>: scáner de vulnerabilidad web automatizado que puede resaltar
+            <li><span class="comando1">Scanner</span>: scanner de vulnerabilidad web automatizado que puede resaltar
                 áreas de la aplicación para una mayor investigación manual o una posible explotación con otra sección de
                 Burp. Esta característica, aunque no está en la edición comunitaria de Burp Suite, sigue siendo una
                 faceta clave para realizar una prueba de aplicaciones web.</li>

@@ -59,9 +59,10 @@
                     </li>
                     <li><span class="comando2">FPING: </span> enviara sondas de eco ICMP a multiples hosts.
                         <br>
+                        <span class="comando2">Prefix: </span>
                         <a class="enlace" href="https://www.ripe.net/about-us/press-centre/IPv4CIDRChart_2015.pdf"
-                            target="_blank"><span class="comando1"></span>
-                            Prefix</a>
+                            target="_blank">
+                            Link de consulta</a>
                         <pre><code class="language-bash line-numbers"data-start="1"
                         >fping -I eth0 -g &lbrack;DNS&rbrack;/prefix -a 2>/dev/null</code></pre>
                         <pre><code class="language-bash line-numbers"data-start="1"
@@ -98,11 +99,11 @@
                             >netstat -r</code></pre>
                     </li>
 
-                    <li><span class="comando2">Configuracion de tabla de enrutamiento</span>
+                    <li><span class="comando2">Configuración de tabla de enrutamiento</span>
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >ip route add &lbrack;IP&rbrack;/&lbrack;Classless inter-Domain Routing (CIDR)&rbrack; via &lbrack;Gateway&rbrack;</code></pre>
                     </li>
-                    <li><span class="comando2">Configuracion de tabla de enrutamiento</span>
+                    <li><span class="comando2">Configuración de tabla de enrutamiento</span>
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >ip route add 192.168.224.2/24 via 10.75.32.1</code></pre>
                     </li>
@@ -110,7 +111,7 @@
                 </ol>
             </li>
 
-            <li><span class="comando1">Direccion MAC de la tarjeta de red</span>
+            <li><span class="comando1">Dirección MAC de la tarjeta de red</span>
 
                 <ol>
                     <li><span class="comando2">Linux or MAC</span>
@@ -123,14 +124,14 @@
                     </li>
                     <li><span class="comando2">Windows</span>
                         <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >ifconfing</code></pre>
+                            >ipconfig</code></pre>
                     </li>
 
 
                 </ol>
             </li>
 
-            <li><span class="comando1">Comprobacion de chache ARP en nuestro host</span>
+            <li><span class="comando1">Comprobación de cache ARP en nuestro host</span>
 
                 <ol>
                     <li><span class="comando2">Linux</span>
@@ -154,7 +155,7 @@
 
 
             <li><span class="comando1">Netstat</span>
-                Comprobacion de puertos de escucha y conexiones Actuales (TCP) en un host</span>
+                Comprobación de puertos de escucha y conexiones Actuales (TCP) en un host</span>
 
                 <ol>
                     <li><span class="comando2">Linux</span>

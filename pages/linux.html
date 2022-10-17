@@ -11,6 +11,7 @@
     <link href="/css/estilos.css" rel="stylesheet">
     <link href="/css/button.css" rel="stylesheet">
     <link href="/css/linux.css" rel="stylesheet">
+    <link href="/css/scroll.css" rel="stylesheet">
     <script type="module" src="/cmp/mi-footer.js"></script>
     <script src="https://kit.fontawesome.com/f67adc3b08.js" crossorigin="anonymous"></script>
 </head>
@@ -47,7 +48,7 @@
         <h1> Linea de comandos Linux</h1>
         <ul>
             <li><span class="comando1">File system</span>
-                <img class="image" src="/images/file_system.png" alt="linux File System">
+                <img class="image" src="/images/file_system.png" alt="Linux File System">
                 <ol>
                     <li><span class="comando2">/</span>: equivalente a C:. </li>
                     <li><span class="comando2">/root</span>: directorio con todos los privilegios del usuario. </li>
@@ -62,11 +63,11 @@
                     </li>
                     <li><span class="comando2">/home</span>: directorio principal del usuario. </li>
                     <li><span class="comando2">/mnt</span>: directorio donde se montan archivos manualmente. </li>
-                    <li><span class="comando2">/media</span>: se suelen montar CD y dispositivos extraibles como USB.
+                    <li><span class="comando2">/media</span>: se suelen montar CD y dispositivos extraíbles como USB.
                     </li>
                     <li><span class="comando2">/bin</span>: directorio de aplicaciones binarias importantes (el
                         equivalente a ejecutables en Microsoft). </li>
-                    <li><span class="comando2">/lib</span>: directorio donde se encuentran todas las librerias del
+                    <li><span class="comando2">/lib</span>: directorio donde se encuentran todas las librerías del
                         sistema (programas que son similares a los DLL de Microsoft). </li>
                     <li><span class="comando2">/proc</span>: directorio que ofrecer información sobre el sistema cerca
                         de los procesos. </li>
@@ -147,7 +148,7 @@
                 <pre><code class="language-bash line-numbers"data-start="1"
                         >|</code></pre>
             </li>
-            <li><span class="comando2">: Significa "and" permite ejecutar un segundo comado.</span>
+            <li><span class="comando2">: Significa "and" permite ejecutar un segundo comando.</span>
                 <pre><code class="language-bash line-numbers"data-start="1"
                         >&&</code></pre>
             </li>
@@ -223,12 +224,12 @@
                             encontrar todos los archivos de /usr/bin que son propiedad de root y tienen al menos los
                             el permiso SUID</li>
 
-                        <li><span class="comando3">/</span>: devolvera archivos que los se establescan los permisos.
+                        <li><span class="comando3">/</span>: devolverá archivos que los se establezcan los permisos.
                         </li>
                         <li><span class="comando3">ejemplo</span>: find /usr/bin -type f -user root -perm /666 <span
                                 class="comando3">--&gt;</span>
                             encontrar todos los archivos de /usr/bin que son propiedad de root y que al menos
-                            coincidirá con archivos que sean legibles y escribibles por al menos uno de los grupos
+                            coincidirá con archivos que sean legibles y se puedan escribir por al menos uno de los grupos
                             (propietario, grupo u otros).</li>
                     </ol>
                     <li><span class="comando2">time-related</span>: enumera búsquedas relacionadas con el tiempo.
@@ -285,7 +286,7 @@
                 <pre><code class="language-bash line-numbers"data-start="1"
                     >ps</code></pre>
                 <ol>
-                    <li><span class="comando2">Los números 3-5 digitos que aparece en la segunda columna se le conoce
+                    <li><span class="comando2">Los números 3-5 dígitos que aparece en la segunda columna se le conoce
                             como process ID(PID)</span></li>
                     <li><span class="comando2">-ef</span>: listar todos los procesos del sistema </li>
                 </ol>
@@ -333,8 +334,8 @@
             </li>
 
             <li>
-                <span class="comando2">Comando en sistemas derivados de debian para
-                    gestionar y administrar los paquetes de distribucion Linux. </span>
+                <span class="comando2">Comando en sistemas derivados de Debian para
+                    gestionar y administrar los paquetes de distribución Linux. </span>
                 <pre><code class="language-bash line-numbers"data-start="1"
                     >apt &lt;command&gt;</code></pre>
                 <ol>
@@ -360,7 +361,7 @@
             </li>
 
             <li>
-                <span class="comando2">Visualiza las propiedades de una ventan.</span>
+                <span class="comando2">Visualiza las propiedades de una ventana.</span>
                 <pre><code class="language-bash line-numbers"data-start="1"
                     > xprop WM_CLASS</code></pre>
             </li>
@@ -398,7 +399,7 @@
 
             </li>
             <li>
-                <span class="comando2">Listar que contenido se estara descomprimiendo del comprimido.</span>
+                <span class="comando2">Listar que contenido se estará descomprimiendo del comprimido.</span>
                 <pre><code class="language-bash line-numbers"data-start="1"
                     >7z </code></pre>
                 <ol>
@@ -431,12 +432,12 @@
                 </ol>
 
             </li>
-            <li><span class="comando2">Sdministrador de paquetes. </span>
+            <li><span class="comando2">Administrador de paquetes. </span>
                 <pre><code class="language-bash line-numbers"data-start="1"
                     >dpkg</code></pre>
                 <ol>
                     <li><span class="comando2">-i &lt;packet.deb&gt;</span>: instalación de paquetes.</li>
-                    <li><span class="comando2">-r &lt;name packet&gt;</span>: eliminacion de paquetes columnas.</li>
+                    <li><span class="comando2">-r &lt;name packet&gt;</span>: eliminación de paquetes columnas.</li>
                 </ol>
 
             </li>
@@ -444,9 +445,11 @@
         </ul>
     </div>
 
-
+    <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+    <script src="/javascript/button.js"></script>
     <script src="/javascript/prism.js"></script>
     <mi-footer></mi-footer>
+    
 </body>
 
 </html>
