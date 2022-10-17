@@ -25,14 +25,14 @@ h1 {
 }
 
 .enlace {
-    color: rgb(15, 253, 201);
+    color: rgb(249, 15, 253);
     background-color: transparent;
     text-decoration: none;
     font-weight: 900;
 }
 
 .enlace:hover {
-    color: rgb(122, 6, 255);
+    color: rgb(116, 0, 248);
     background-color: transparent;
     font-weight: 900;
 }
