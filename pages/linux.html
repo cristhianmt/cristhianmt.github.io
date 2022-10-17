@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="fab fa-linux">HackSheet Bl3Ak</title>
+    <link rel="stylesheet" href="/css/prism.css">
+
     <link rel="icon" href="/images/logo.ico">
     <link href="/css/estilos.css" rel="stylesheet">
     <link href="/css/button.css" rel="stylesheet">
@@ -47,30 +49,31 @@
             <li><span class="comando1">File system</span>
                 <img class="image" src="/images/file_system.png" alt="linux File System">
                 <ol>
-                    <li><span class="comando2">/</span>: equivalente a C:.</li>
-                    <li><span class="comando2">/root</span>: directorio con todos los privilegios del usuario.</li>
-                    <li><span class="comando2">/etc</span>: contiene generalmente los archivos de configuracion, cuando
+                    <li><span class="comando2">/</span>: equivalente a C:. </li>
+                    <li><span class="comando2">/root</span>: directorio con todos los privilegios del usuario. </li>
+                    <li><span class="comando2">/etc</span>: contiene generalmente los archivos de configuración, cuando
                         y como inician los programas.
                         <ol>
                             <li><span class="comando2">/passwd</span>: almacena la información del usuario, se usa para
-                                ver todos los usuarios en un sistema.</li>
+                                ver todos los usuarios en un sistema. </li>
                             <li><span class="comando2">/shadow </span>: tiene todas las contraseñas de todos los
-                                usuarios.</li>
+                                usuarios. </li>
                         </ol>
                     </li>
-                    <li><span class="comando2">/home</span>: directorio principal del usuario.</li>
+                    <li><span class="comando2">/home</span>: directorio principal del usuario. </li>
                     <li><span class="comando2">/mnt</span>: directorio donde se montan archivos manualmente. </li>
                     <li><span class="comando2">/media</span>: se suelen montar CD y dispositivos extraibles como USB.
                     </li>
-                    <li><span class="comando2">/bin</span>: directorio de aplicaciones binarias importantes(el
-                        equivalente a ejecutables en Microsoft).</li>
+                    <li><span class="comando2">/bin</span>: directorio de aplicaciones binarias importantes (el
+                        equivalente a ejecutables en Microsoft). </li>
                     <li><span class="comando2">/lib</span>: directorio donde se encuentran todas las librerias del
-                        sistema(programas que son similares a los DLL de Microsoft).</li>
-                    <li><span class="comando2">/proc</span>: directorio que ofrecer informacion sobre el sistema cerca
+                        sistema (programas que son similares a los DLL de Microsoft). </li>
+                    <li><span class="comando2">/proc</span>: directorio que ofrecer información sobre el sistema cerca
                         de los procesos. </li>
-                    <li><span class="comando2">/sys</span>: contiene archivos del sistema.</li>
-                    <li><span class="comando2">/usr</span>: contiene todos los archivos ejecutables.</li>
-                    <li><samp class="comando2">sudo -l</samp>: imprime los comando permitidos por los usuarios actuales.
+                    <li><span class="comando2">/sys</span>: contiene archivos del sistema. </li>
+                    <li><span class="comando2">/usr</span>: contiene todos los archivos ejecutables. </li>
+                    <li><span class="comando2">sudo -l</span>: imprime los comandos permitidos por los usuarios
+                        actuales.
                     </li>
                     <li><span class="comando2">Nano /etc/sudoers </span>: dar permisos de ejecución de administrador.
                         <br>
@@ -80,60 +83,111 @@
                     </li>
 
                 </ol>
+
+
             </li>
             <li><span class="comando1">$</span>: usuario normal.</li>
-            <li><span class="comando1">#</span>: super usuario.</li>
-            <li><span class="comando1">pwd</span>: directorio de trabajo actual.</li>
-            <li><span class="comando1">which</span>: localiza la ruta de los archivos ejecutables.</li>
+            <li><span class="comando1">#</span>: super administrador.</li>
 
-            <li>
-                <span class="comando1">man &lt;app/command&gt;</span>: comando incorporado, da acceso a las páginas del
-                manual para la mayoría de las herramientas.
+            <li><span class="comando2">Directorio de trabajo actual.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >pwd</code></pre>
             </li>
-            <li><span class="comando1">su </span>: permite cambiar de usuario sin cerrar sesión y volver a iniciarla en
-                la sesión primaria.</li>
-            <li><span class="comando1">whoami</span>: visualiza que el nombre de usuario actual.</li>
-            <li>
-                <span class="comando1">ls</span>: listar todos los archivos de directorio actual
+            <li><span class="comando2">Localiza la ruta de los archivos ejecutables.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >which</code></pre>
+            </li>
+            <li><span class="comando2">comando incorporado, da acceso a las páginas del
+                    manual para la mayoría de las herramientas.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >man &lt;app/command&gt;</code></pre>
+            </li>
+            <li><span class="comando2">permite cambiar de usuario sin cerrar sesión y volver a iniciarla en
+                    la sesión primaria.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >su</code></pre>
+            </li>
+            <li><span class="comando2">Visualiza que el nombre de usuario actual.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >whoami</code></pre>
+            </li>
+            <li><span class="comando2">Listar todos los archivos de directorio actuall.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >ls</code></pre>
                 <ol>
                     <li><span class="comando2">-a</span>: muestra todos los archivos/directorios incluidos los “.” ó los
                         ocultos.</li>
                     <li><span class="comando2">-l</span>: muestra los archivos en formato de lista. </li>
+                    <li><span class="comando2">-h</span>: tamaño de impresión como 1k, 23M 2G, etc.</li>
                 </ol>
             </li>
-            <li><span class="comando1">cd</span>: cambio de directorio.</li>
-            <li><span class="comando1">cat &lt;name file&gt;</span>: concatenar archivos lo que proporciona una salida
-                del contenido de cada archivo.</li>
-            <li><span class="comando1">&gt;</span>: redireccionamiento para guardar los resultados en un archivo
-                ó sobrescribir el archivo.</li>
-            <li><span class="comando1">&gt;&gt;</span>: agrega nueva informacion al archivo creado sin
-                sobrescribir. </li>
-
-            <li><samp class="comando1">|</samp>: operador tubería donde le permite tomar la salida de un comando y
-                usarla como entrada para un segundo comando.</li>
-            <li><samp class="comando1">&&</samp>: significa "and" permite ejecutar un segundo comado.</li>
-            <li><samp class="comando1">&</samp>: es un operador de segundo plano lo que significa que ejecuta un comando
-                que tarda 10 segundos en ejecutarse, normalmente no podría ejecutar comandos durante ese período; sin
-                embargo, con & ese comando aún se ejecutará y podrá ejecutar otros comandos.</li>
-            <li><samp class="comando1">;</samp>: es similar a && sin embargo no requiere que el primer comando se
-                ejecute.</li>
-
-
-            <li><samp class="comando1">grep &lt;word&gt;</samp>: buscar palabras especificas.</li>
-            <li><samp class="comando1">chown &lt;user:user&gt; file</samp>: nos permite cambiar el usuario y el grupo de
-                cualquier archivo : solo se puede usar si esta ensima de ese otro usuario lo que significa que se
-                realiza mejor con el usuario root</li>
+            <li><span class="comando2">Cambio de directorio.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >cd</code></pre>
+            </li>
+            <li><span class="comando2">Concatenar archivos lo que proporciona una salida
+                    del contenido de cada archivo.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >cat &lt;name file&gt</code></pre>
+            </li>
+            <li><span class="comando2">Redireccionamiento para guardar los resultados en un archivo
+                    ó sobrescribir el archivo.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >&gt;</code></pre>
+            </li>
+            <li><span class="comando2">Agrega nueva información al archivo creado sin
+                    sobrescribir.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >&gt;&gt;</code></pre>
+            </li>
 
 
-            <li><span class="comando1">find</span>: permite buscar cualquier archivo en el sistema.
+            <li><span class="comando2">Operador tubería donde le permite tomar la salida de un comando y
+                    usarla como entrada para un segundo comando.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >|</code></pre>
+            </li>
+            <li><span class="comando2">: Significa "and" permite ejecutar un segundo comado.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >&&</code></pre>
+            </li>
+            <li><span class="comando2">Operador de segundo plano lo que significa que ejecuta un comando
+                    que tarda 10 segundos en ejecutarse, normalmente no podría ejecutar comandos durante ese período;
+                    sin
+                    embargo, con & ese comando aún se ejecutará y podrá ejecutar otros comandos.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >&</code></pre>
+            </li>
+            <li><span class="comando2">Similar a && sin embargo no requiere que el primer comando se
+                    ejecute.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >;</code></pre>
+            </li>
+
+
+            <li><span class="comando2">Buscar palabras especificas.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >grep &lt;word&gt;</code></pre>
+            </li>
+            <li><span class="comando2">Nos permite cambiar el usuario y el grupo de
+                    cualquier archivo : solo se puede usar si esta encima de ese otro usuario lo que significa que se
+                    realiza mejor con el usuario root</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >chown &lt;user:user&gt; &lt;file&gt;</code></pre>
+            </li>
+
+
+            <li><span class="comando2">Permite buscar cualquier archivo en el sistema.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >find</code></pre>
                 <ol>
                     <li><span class="comando2">/</span>: enumera todos los archivos del sistema operativo.</li>
                     <li><span class="comando2">/&lt;name directory&gt;</span>: enumera todos los archivos del directorio
                         especifico.</li>
                     <li><span class="comando2">-type &lt;type&gt;</span>: enumerar el tipo de archivo.</li>
                     <ol>
-                        <li><span class="comando2">d</span>: busqueda de directorios.</li>
-                        <li><span class="comando2">f</span>: busqueda de archivos.</li>
+                        <li><span class="comando2">d</span>: búsqueda de directorios.</li>
+                        <li><span class="comando2">f</span>: búsqueda de archivos.</li>
                     </ol>
                     <li><span class="comando2">-name &lt;"*.txt/xml/py"&gt;</span>: se especifica el patron a buscar.
                     </li>
@@ -159,10 +213,10 @@
                             <li><span class="comando2">nG</span>: para GiB.</li>
                             <li><span class="comando3">ejemplo</span>: find /home -type f -size -2k -name "*.txt"</li>
                         </ol>
-                    <li><span class="comando2">-perm &lt;octal(666) ó simbolica(u=r)&gt;</span>: encuentra todos los
-                        archivos con permisos especificos.</li>
+                    <li><span class="comando2">-perm &lt;octal(666) ó simbólica(u=r)&gt;</span>: encuentra todos los
+                        archivos con permisos específicos.</li>
                     <ol>
-                        <li><span class="comando3">-</span>: devolvera archivos con al menos esos permisos configurados.
+                        <li><span class="comando3">-</span>: devolverá archivos con al menos esos permisos configurados.
                         </li>
                         <li><span class="comando3">ejemplo</span>: find /usr/bin -type f -user root -perm -u=s <span
                                 class="comando3">--&gt;</span>
@@ -177,15 +231,15 @@
                             coincidirá con archivos que sean legibles y escribibles por al menos uno de los grupos
                             (propietario, grupo u otros).</li>
                     </ol>
-                    <li><span class="comando2">time-related</span>: enumera busquedas relacionadas con el tiempo.
+                    <li><span class="comando2">time-related</span>: enumera búsquedas relacionadas con el tiempo.
                         <ol>
                             <li><span class="comando2">prefijos para especificar el tiempo.</span></li>
                             <ol>
-                                <li><span class="comando2">a</span>: cuando fue el ultimo acceso.</li>
-                                <li><span class="comando2">m</span>: cuando fue la ultima modificacion.</li>
-                                <li><span class="comando2">c</span>: cuando fue el ultimo cambio.</li>
+                                <li><span class="comando2">a</span>: cuando fue el último acceso.</li>
+                                <li><span class="comando2">m</span>: cuando fue la última modificación.</li>
+                                <li><span class="comando2">c</span>: cuando fue el último cambio.</li>
                             </ol>
-                            <li><span class="comando2">valor numerico para especificar el tiempo.</span></li>
+                            <li><span class="comando2">valor numérico para especificar el tiempo.</span></li>
                             <ol>
                                 <li><span class="comando2">+n</span>: especificar que se accedió por última vez hace mas
                                     de
@@ -206,8 +260,8 @@
                             </li>
                             <li><span class="comando3">ejemplo</span>: find /usr/bin -type f -atime +10 <span
                                     class="comando3">--&gt;</span>
-                                encontrar todos los archivos de /usr/bin a los que no se accedió en las ultimos diez
-                                dias.
+                                encontrar todos los archivos de /usr/bin a los que no se accedió en las últimos diez
+                                días.
                             </li>
                             <li><span class="comando2">2&gt;/dev/null</span>: suprimir la salida de cualquier error
                                 posible
@@ -217,7 +271,7 @@
                             <li><span class="comando3">ejemplo</span>: find /usr/bin -type f -name "*.txt" 2&gt;
                                 /dev/null
                                 <span class="comando3">--&gt;</span>
-                                encontrar todos los archivos de /usr/bin con terminacion .txt y ademas que solo aparezca
+                                encontrar todos los archivos de /usr/bin con terminación .txt y además que solo aparezca
                                 los
                                 archivos que se
                                 puedan acceder.
@@ -227,19 +281,26 @@
                 </ol>
             </li>
 
-            <li><span class="comando1">ps</span>: muestra los procesos que se están ejecutando.
+            <li><span class="comando2">Muestra los procesos que se están ejecutando.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >ps</code></pre>
                 <ol>
                     <li><span class="comando2">Los números 3-5 digitos que aparece en la segunda columna se le conoce
                             como process ID(PID)</span></li>
                     <li><span class="comando2">-ef</span>: listar todos los procesos del sistema </li>
                 </ol>
             </li>
-            <li><span class="comando1">kill&lt;PID&gt;</span>: mata procesos.</li>
+            <li><span class="comando2">Finaliza procesos.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >kill &lt;PID&gt;</code></pre>
+            </li>
 
-            <li><span class="comando1">chmod &lt;permissions&gt; &lt;file&gt;</span>: permisos de archivo.
+            <li><span class="comando2">Asignación de permisos de acceso a directorios o archivos. </span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >chmod &lt;permissions&gt; &lt;file&gt;</code></pre>
                 <ol>
                     <li><span>Se dividen en tres secciones, usuario y grupo y todos los demás.
-                            Todo comienza desde el segundo guión, no desde el primero.
+                            Todo comienza desde el segundo guion, no desde el primero.
                             Tenga en cuenta que todo está en orden secuencial, por lo que los primeros tres caracteres
                             controlan los permisos del usuario,
                             los segundos tres caracteres controlan los permisos del grupo y los tres últimos caracteres
@@ -251,7 +312,7 @@
                 <img class="image" src="/images/chmod_user.png" alt="comando chmod number">
                 <ol>
                     <li><span class="comando3">ejemplo</span>: chmod u-x myfile <span class="comando3">--&gt;</span>
-                        quitar el permiso de ejecusion al usuario.
+                        quitar el permiso de ejecución al usuario.
                     </li>
                     <li><span class="comando3">ejemplo</span>: chmod ug+w myfile <span class="comando3">--&gt;</span>
                         agregar permisos de escritura al usuario y al grupo.
@@ -262,7 +323,7 @@
                 <br>
                 <ol>
                     <li><span class="comando3">ejemplo</span>: Chmod 777 &lt;file&gt; <span
-                            class="comando3">--&gt;</span> dar permiso de ejecusion a todos los usuarios.
+                            class="comando3">--&gt;</span> dar permiso de ejecución a todos los usuarios.
 
                     </li>
                 </ol>
@@ -272,8 +333,10 @@
             </li>
 
             <li>
-                <span class="comando1">apt &lt;command&gt;</span>: comando en sistemas derivados de debian para
-                instalar programas en Linux.
+                <span class="comando2">Comando en sistemas derivados de debian para
+                    gestionar y administrar los paquetes de distribucion Linux. </span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >apt &lt;command&gt;</code></pre>
                 <ol>
                     <li><span class="comando2">list </span>: lista los paquetes según los nombres</li>
                     <li><span class="comando2">search</span>: busca en las descripciones de los paquetes</li>
@@ -291,53 +354,88 @@
                     <li><span class="comando2">purge &lt;app &gt;</span> : eliminar aplicación</li>
                     <li><span class="comando2">update --fix-missing</span>: error al actualizar los paquetes</li>
                 </ol>
-            <li><span class="comando2">nano /etc/apt/sources.list</span>: repositorios instalados en el sistema. </li>
-
+            <li><span class="comando2">Repositorios instalados en el sistema. </span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >nano</code></pre>
             </li>
 
             <li>
-                <span class="comando1"> xprop WM_CLASS</span>: visualiza las propiedades de una ventan.
+                <span class="comando2">Visualiza las propiedades de una ventan.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    > xprop WM_CLASS</code></pre>
             </li>
 
-            <li><span class="comando1">wget</span>: descargardor de archivos no interactivo</li>
+            <li><span class="comando2">Recuperar contenido de servidores web.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >wget</code></pre>
+            </li>
 
-            <li><span class="comando1">xrandr -s &lt; display size &gt;</span>: tamaño de pantalla
+            <li><span class="comando2">Tamaño de pantalla</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >xrandr -s &lt;display size&gt;</code></pre>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >xrandr -s 1400x1050</code></pre>
+            </li>
+            <li>
+                <span class="comando2">Convierte entre formatos de imagen, así como cambiar el tamaño de una imagen,
+                    desenfoca</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >convert &lt;img&gt; &lt;png, jpg&gt;</code></pre>
+            </li>
+            <li>
+                <span class="comando2">Shell</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >echo $SHELL</code></pre>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >grep &lt;user&gt; /etc/passwd</code></pre>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                     >nano /etc/passwd</code></pre>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >echo $0</code></pre>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >getent passwd 'whoami'</code></pre>
 
+
+            </li>
+            <li>
+                <span class="comando2">Listar que contenido se estara descomprimiendo del comprimido.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >7z </code></pre>
                 <ol>
-                    <li><samp class="comando3">ejemplo</samp>: xrandr -s 1400x1050</li>
+                    <li><span class="comando2">x</span>: lista los archivo.</li>
+                    <li><span class="comando2">x</span>: extraer el archivo.</li>
                 </ol>
             </li>
             <li>
-                <samp class="comando1">convert &lt;img&gt; &lt;png, jpg&gt;</samp>
-            </li>
-            <li>
-                <samp class="comando1">Shell</samp>
+                <span class="comando2">Comprimir archivo</span>.
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >tar -zcvf &lt;nombre-del-archivo-salida.tar.gz&gt; &lt;nombre-directorio-o-archivo&gt;</code></pre>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                        >tar -xvf &lt;nombre-del-archivo-salida.tar.gz&gt;</code></pre>
                 <ol>
-                    <li><samp class="comando2">echo $SHELL</samp> </li>
-                    <li><samp class="comando2">grep &lt;user&gt; /etc/passwd</samp> </li>
-                    <li><samp class="comando2">nano /etc/passwd</samp> </li>
-                    <li><samp class="comando2">echo $0</samp> </li>
-                    <li><samp class="comando2">getent passwd 'whoami'</samp></li>
-
+                    <li><span class="comando2">-c</span>: Crear un nuevo archivo.</li>
+                    <li><span class="comando2">-f</span>: Nombre del archivo.</li>
+                    <li><span class="comando2">-v</span>: muestra una descripción detallada del progreso de la
+                        descompresión.</li>
+                    <li><span class="comando2">-x</span>: Descomprimir un archivo usando gzip.</li>
+                    <li><span class="comando2">-z</span>: Comprimir un archivo usando gzip.</li>
                 </ol>
-            </li>
-            <li>
-                <samp class="comando1">7z l</samp>: listar que contenido se estara descomprimiendo del comprimido.
-                <ol>
-                    <li><samp class="comando2">x</samp>: extraer el archivo.</li>
-                </ol>
-            </li>
 
-            <li><samp class="comando1">stty -a</samp>: informacion sobre la shell.
+            </li>
+            <li><span class="comando2">Información sobre la shell.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                 >stty -a</code></pre>
                 <ol>
                     <li><span class="comando2">rows &lt;number&gt;</span>: configurar el numero de filas.</li>
                     <li><span class="comando2">cols &lt;number&gt;</span>: configurar el numero de columnas.</li>
                 </ol>
 
             </li>
-            <li><samp class="comando1">dpkg</samp>: administrador de paquetes.
+            <li><span class="comando2">Sdministrador de paquetes. </span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >dpkg</code></pre>
                 <ol>
-                    <li><span class="comando2">-i &lt;packet.deb&gt;</span>: instalacion de paquetes.</li>
+                    <li><span class="comando2">-i &lt;packet.deb&gt;</span>: instalación de paquetes.</li>
                     <li><span class="comando2">-r &lt;name packet&gt;</span>: eliminacion de paquetes columnas.</li>
                 </ol>
 
@@ -347,7 +445,7 @@
     </div>
 
 
-
+    <script src="/javascript/prism.js"></script>
     <mi-footer></mi-footer>
 </body>
 
