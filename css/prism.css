@@ -91,7 +91,7 @@ pre[class*=language-] {
 }
 /* important numbers */
 .token.important, .token.regex {
-    color: #720eff
+    color: #a6fe8b
 }
 
 .token.bold, .token.important {
